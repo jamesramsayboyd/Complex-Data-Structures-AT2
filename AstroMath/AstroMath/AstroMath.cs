@@ -7,6 +7,8 @@ using System.Threading.Tasks;
 namespace AstroMath
 {
     /// <summary>
+    /// James Boyd
+    /// 30041547
     /// A DLL containing four methods to perform various astronomical calculations
     /// </summary>
     public class AstroMath
@@ -14,9 +16,9 @@ namespace AstroMath
         /// <summary>
         /// A method to measure the velocity of a star using its Doppler shift
         /// Change in Wavelength = Observed Wavelength - Rest Wavelength
-        /// Speed of Light (c) = 299792458 m/s
-        /// v = velocity (m/s)
-        /// Formula: v = c * (Change in Wavelength / Rest Wavelength)
+        /// Speed of Light (C) = 299792458 m/s
+        /// V = velocity (m/s)
+        /// Formula: V = C * (Change in Wavelength / Rest Wavelength)
         /// </summary>
         /// <param name="ObservedWavelength">A double representing the observed wavelength of the star</param>
         /// <param name="RestWavelength">A double representing the rest wavelength of the star</param>
