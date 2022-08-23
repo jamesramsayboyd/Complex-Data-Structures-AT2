@@ -23,7 +23,7 @@ namespace AstroMath
         /// <param name="ObservedWavelength">A double representing the observed wavelength of the star</param>
         /// <param name="RestWavelength">A double representing the rest wavelength of the star</param>
         /// <returns>A double representing the velocity of the star (in metres per second)</returns>
-        public static double StarVelocity(double ObservedWavelength, double RestWavelength)
+        public double StarVelocity(double ObservedWavelength, double RestWavelength)
         {
             double ChangeInWavelength = ObservedWavelength - RestWavelength;
             double C = 299792458;
@@ -34,12 +34,12 @@ namespace AstroMath
         /// <summary>
         /// A method to measure the distance of a star using the parallax angle from two measuring points in parsecs
         /// Parallax Angle (P) in arcseconds (1/3600 of an arc)
-        /// Distance (D) in parsecs (1 parsec = 3.0857 x 10^16m)
+        /// Distance (D) in parsecs (1 parsec = 3.0857 x 10^16m, or 3.26 lightyears)
         /// Formula: D = 1 / P
         /// </summary>
         /// <param name="P">A double representing the parallax angle (in arcseconds)</param>
         /// <returns>A double representing the distance of the star from the measuring points (in parsecs)</returns>
-        public static double StarDistance(double P)
+        public double StarDistance(double P)
         {
             double D = 1 / P;
             return D;
@@ -54,7 +54,7 @@ namespace AstroMath
         /// </summary>
         /// <param name="C">The temperature to be converted (in degrees Celsius)</param>
         /// <returns>The equivalent temperature in Kelvin</returns>
-        public static double TemperatureInKelvin(double C)
+        public double TemperatureInKelvin(double C)
         {
             if (C < -273)
             {
@@ -67,7 +67,7 @@ namespace AstroMath
         /// <summary>
         /// A method that will return the Schwarzschild radius of a blackhole, i.e.
         /// the distance from the centre of the blackhole to the event horizon, in meters
-        /// Gravity Constant (G) = 6.674 x 10^-11 m^3/kg^-1/s^-2
+        /// Gravity Constant (G) = 6.674 x 10^-11 m^3 kg^-1 s^-2
         /// Speed of Light (C) = 299792458 m/s
         /// Mass of Blackhole (M) (in kg)
         /// Schwarzschild Radius (R) (in m)
@@ -75,7 +75,7 @@ namespace AstroMath
         /// </summary>
         /// <param name="M">The mass of the blackhole (in kg)</param>
         /// <returns>The Schwarzschild radius (in meters)</returns>
-        public static double EventHorizon(double M)
+        public double EventHorizon(double M)
         {
             double G = 6.674 * Math.Pow(10, -11);
             double C = 299792458;
