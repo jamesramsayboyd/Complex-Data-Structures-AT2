@@ -1,0 +1,11 @@
+D:\TAFE\ICT50220 Advanced Programming\Day 1\Cluster - Complex Data Structures\AT2\@\AstroMathClient\AstroMathClient\obj\Debug\AstroMathClient.csproj.AssemblyReference.cache
+D:\TAFE\ICT50220 Advanced Programming\Day 1\Cluster - Complex Data Structures\AT2\@\AstroMathClient\AstroMathClient\obj\Debug\AstroMathClient.csproj.SuggestedBindingRedirects.cache
+D:\TAFE\ICT50220 Advanced Programming\Day 1\Cluster - Complex Data Structures\AT2\@\AstroMathClient\AstroMathClient\obj\Debug\AstroMathClient.AstroMathClient.resources
+D:\TAFE\ICT50220 Advanced Programming\Day 1\Cluster - Complex Data Structures\AT2\@\AstroMathClient\AstroMathClient\obj\Debug\AstroMathClient.Properties.Resources.resources
+D:\TAFE\ICT50220 Advanced Programming\Day 1\Cluster - Complex Data Structures\AT2\@\AstroMathClient\AstroMathClient\obj\Debug\AstroMathClient.csproj.GenerateResource.cache
+D:\TAFE\ICT50220 Advanced Programming\Day 1\Cluster - Complex Data Structures\AT2\@\AstroMathClient\AstroMathClient\obj\Debug\AstroMathClient.csproj.CoreCompileInputs.cache
+D:\TAFE\ICT50220 Advanced Programming\Day 1\Cluster - Complex Data Structures\AT2\@\AstroMathClient\AstroMathClient\bin\Debug\AstroMathClient.exe.config
+D:\TAFE\ICT50220 Advanced Programming\Day 1\Cluster - Complex Data Structures\AT2\@\AstroMathClient\AstroMathClient\bin\Debug\AstroMathClient.exe
+D:\TAFE\ICT50220 Advanced Programming\Day 1\Cluster - Complex Data Structures\AT2\@\AstroMathClient\AstroMathClient\bin\Debug\AstroMathClient.pdb
+D:\TAFE\ICT50220 Advanced Programming\Day 1\Cluster - Complex Data Structures\AT2\@\AstroMathClient\AstroMathClient\obj\Debug\AstroMathClient.exe
+D:\TAFE\ICT50220 Advanced Programming\Day 1\Cluster - Complex Data Structures\AT2\@\AstroMathClient\AstroMathClient\obj\Debug\AstroMathClient.pdb
