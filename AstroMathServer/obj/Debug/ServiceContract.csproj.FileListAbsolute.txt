@@ -1,0 +1,10 @@
+D:\TAFE\ICT50220 Advanced Programming\Day 1\Cluster - Complex Data Structures\AT2\ServiceContract\bin\Debug\ConsoleAppServer.exe.config
+D:\TAFE\ICT50220 Advanced Programming\Day 1\Cluster - Complex Data Structures\AT2\ServiceContract\bin\Debug\ConsoleAppServer.exe
+D:\TAFE\ICT50220 Advanced Programming\Day 1\Cluster - Complex Data Structures\AT2\ServiceContract\bin\Debug\ConsoleAppServer.pdb
+D:\TAFE\ICT50220 Advanced Programming\Day 1\Cluster - Complex Data Structures\AT2\ServiceContract\bin\Debug\AstroMath.dll
+D:\TAFE\ICT50220 Advanced Programming\Day 1\Cluster - Complex Data Structures\AT2\ServiceContract\obj\Debug\ServiceContract.csproj.AssemblyReference.cache
+D:\TAFE\ICT50220 Advanced Programming\Day 1\Cluster - Complex Data Structures\AT2\ServiceContract\obj\Debug\ServiceContract.csproj.SuggestedBindingRedirects.cache
+D:\TAFE\ICT50220 Advanced Programming\Day 1\Cluster - Complex Data Structures\AT2\ServiceContract\obj\Debug\ServiceContract.csproj.CoreCompileInputs.cache
+D:\TAFE\ICT50220 Advanced Programming\Day 1\Cluster - Complex Data Structures\AT2\ServiceContract\obj\Debug\ServiceContract.csproj.CopyComplete
+D:\TAFE\ICT50220 Advanced Programming\Day 1\Cluster - Complex Data Structures\AT2\ServiceContract\obj\Debug\ConsoleAppServer.exe
+D:\TAFE\ICT50220 Advanced Programming\Day 1\Cluster - Complex Data Structures\AT2\ServiceContract\obj\Debug\ConsoleAppServer.pdb

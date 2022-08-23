@@ -1,0 +1,16 @@
+C:\Users\godwis\Source\Repos\ConsoleAppServer\bin\Debug\ConsoleAppServer.exe.config
+C:\Users\godwis\Source\Repos\ConsoleAppServer\bin\Debug\ConsoleAppServer.exe
+C:\Users\godwis\Source\Repos\ConsoleAppServer\bin\Debug\ConsoleAppServer.pdb
+C:\Users\godwis\Source\Repos\ConsoleAppServer\obj\Debug\ConsoleAppServer.csproj.AssemblyReference.cache
+C:\Users\godwis\Source\Repos\ConsoleAppServer\obj\Debug\ConsoleAppServer.csproj.SuggestedBindingRedirects.cache
+C:\Users\godwis\Source\Repos\ConsoleAppServer\obj\Debug\ConsoleAppServer.csproj.CoreCompileInputs.cache
+C:\Users\godwis\Source\Repos\ConsoleAppServer\obj\Debug\ConsoleAppServer.exe
+C:\Users\godwis\Source\Repos\ConsoleAppServer\obj\Debug\ConsoleAppServer.pdb
+C:\Users\30041547\Downloads\WCFClientServer\ConsoleAppServer\bin\Debug\ConsoleAppServer.exe.config
+C:\Users\30041547\Downloads\WCFClientServer\ConsoleAppServer\bin\Debug\ConsoleAppServer.exe
+C:\Users\30041547\Downloads\WCFClientServer\ConsoleAppServer\bin\Debug\ConsoleAppServer.pdb
+C:\Users\30041547\Downloads\WCFClientServer\ConsoleAppServer\obj\Debug\ConsoleAppServer.csproj.AssemblyReference.cache
+C:\Users\30041547\Downloads\WCFClientServer\ConsoleAppServer\obj\Debug\ConsoleAppServer.csproj.SuggestedBindingRedirects.cache
+C:\Users\30041547\Downloads\WCFClientServer\ConsoleAppServer\obj\Debug\ConsoleAppServer.csproj.CoreCompileInputs.cache
+C:\Users\30041547\Downloads\WCFClientServer\ConsoleAppServer\obj\Debug\ConsoleAppServer.exe
+C:\Users\30041547\Downloads\WCFClientServer\ConsoleAppServer\obj\Debug\ConsoleAppServer.pdb
