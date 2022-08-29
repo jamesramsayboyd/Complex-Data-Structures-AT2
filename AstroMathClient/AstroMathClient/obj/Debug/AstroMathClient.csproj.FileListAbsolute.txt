@@ -9,3 +9,14 @@ D:\TAFE\ICT50220 Advanced Programming\Day 1\Cluster - Complex Data Structures\AT
 D:\TAFE\ICT50220 Advanced Programming\Day 1\Cluster - Complex Data Structures\AT2\@\AstroMathClient\AstroMathClient\bin\Debug\AstroMathClient.pdb
 D:\TAFE\ICT50220 Advanced Programming\Day 1\Cluster - Complex Data Structures\AT2\@\AstroMathClient\AstroMathClient\obj\Debug\AstroMathClient.exe
 D:\TAFE\ICT50220 Advanced Programming\Day 1\Cluster - Complex Data Structures\AT2\@\AstroMathClient\AstroMathClient\obj\Debug\AstroMathClient.pdb
+C:\Users\30041547\Documents\GitHub\Complex-Data-Structures-AT2\AstroMathClient\AstroMathClient\bin\Debug\AstroMathClient.exe.config
+C:\Users\30041547\Documents\GitHub\Complex-Data-Structures-AT2\AstroMathClient\AstroMathClient\bin\Debug\AstroMathClient.exe
+C:\Users\30041547\Documents\GitHub\Complex-Data-Structures-AT2\AstroMathClient\AstroMathClient\bin\Debug\AstroMathClient.pdb
+C:\Users\30041547\Documents\GitHub\Complex-Data-Structures-AT2\AstroMathClient\AstroMathClient\obj\Debug\AstroMathClient.csproj.AssemblyReference.cache
+C:\Users\30041547\Documents\GitHub\Complex-Data-Structures-AT2\AstroMathClient\AstroMathClient\obj\Debug\AstroMathClient.csproj.SuggestedBindingRedirects.cache
+C:\Users\30041547\Documents\GitHub\Complex-Data-Structures-AT2\AstroMathClient\AstroMathClient\obj\Debug\AstroMathClient.AstroMathClient.resources
+C:\Users\30041547\Documents\GitHub\Complex-Data-Structures-AT2\AstroMathClient\AstroMathClient\obj\Debug\AstroMathClient.Properties.Resources.resources
+C:\Users\30041547\Documents\GitHub\Complex-Data-Structures-AT2\AstroMathClient\AstroMathClient\obj\Debug\AstroMathClient.csproj.GenerateResource.cache
+C:\Users\30041547\Documents\GitHub\Complex-Data-Structures-AT2\AstroMathClient\AstroMathClient\obj\Debug\AstroMathClient.csproj.CoreCompileInputs.cache
+C:\Users\30041547\Documents\GitHub\Complex-Data-Structures-AT2\AstroMathClient\AstroMathClient\obj\Debug\AstroMathClient.exe
+C:\Users\30041547\Documents\GitHub\Complex-Data-Structures-AT2\AstroMathClient\AstroMathClient\obj\Debug\AstroMathClient.pdb
