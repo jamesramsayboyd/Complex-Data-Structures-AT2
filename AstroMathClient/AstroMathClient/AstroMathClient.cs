@@ -21,33 +21,21 @@ namespace AstroMathClient
         }
         // Creating the pipe proxy for the interface as a global variable
         IAstroContract astroPipeProxy;
-        //ListViewItem lvi = new ListViewItem();
 
         #region BUTTON METHODS
-        public void DisplayResult(int column)
-        {
-            ListViewItem lvi = new ListViewItem();
-            lvi.SubItems.Add("");
-            lvi.SubItems.Add("");
-        }
         private void buttonCalculateStarVelocity_Click(object sender, EventArgs e)
         {
             double observedWavelength = double.Parse(textBoxObservedWavelength.Text);
             double restWavelength = double.Parse(textBoxRestWavelength.Text);
             double starVelocity = astroPipeProxy.StarVelocity(observedWavelength, restWavelength);
-            textBoxStarVelocity.Text = starVelocity.ToString();
-            ListViewItem lvi = new ListViewItem(starVelocity.ToString());
-            listViewOutput.Items.Insert(0, lvi);
+            DisplayCalculationResult(starVelocity.ToString(), "", "", "");
         }
 
         private void buttonCalculateStarDistance_Click(object sender, EventArgs e)
         {
             double parallaxAngle = double.Parse(textBoxParallaxAngle.Text);
             double starDistance = astroPipeProxy.StarDistance(parallaxAngle);
-            textBoxStarDistance.Text = starDistance.ToString();
-            ListViewItem lvi = new ListViewItem();
-            lvi.SubItems.Add(starDistance.ToString());
-            listViewOutput.Items.Insert(0, lvi);
+            DisplayCalculationResult("", starDistance.ToString(), "", "");
         }
 
         private void buttonConvertTemperature_Click(object sender, EventArgs e)
@@ -56,16 +44,11 @@ namespace AstroMathClient
             if (temperatureInCelsius >= -273)
             {
                 double temperatureInKelvin = astroPipeProxy.TemperatureInKelvin(temperatureInCelsius);
-                textBoxKelvin.Text = temperatureInKelvin.ToString();
-                ListViewItem lvi = new ListViewItem();
-                lvi.SubItems.Add("");
-                lvi.SubItems.Add(temperatureInKelvin.ToString());
-                listViewOutput.Items.Insert(0, lvi);
+                DisplayCalculationResult("", "", temperatureInKelvin.ToString(), "");
             }
             else
             {
-                //TODO: Error message "Enter a temp above -273"
-                textBoxKelvin.Text = "Error";
+                ErrorMessage(0);
             }            
         }
 
@@ -73,14 +56,9 @@ namespace AstroMathClient
         {
             double baseNo = double.Parse(textBoxSchwarzschild.Text);
             double exponentNo = double.Parse(textBoxExponent.Text);
-            double schwarzschildRadius = Math.Pow(baseNo, exponentNo);
+            double schwarzschildRadius = baseNo * (Math.Pow(10, exponentNo));
             double eventHorizon = astroPipeProxy.EventHorizon(schwarzschildRadius);
-            textBoxEventHorizon.Text = eventHorizon.ToString();
-            ListViewItem lvi = new ListViewItem();
-            lvi.SubItems.Add("");
-            lvi.SubItems.Add("");
-            lvi.SubItems.Add(eventHorizon.ToString());
-            listViewOutput.Items.Insert(0, lvi);
+            DisplayCalculationResult("", "", "", eventHorizon.ToString());
             // TODO: Format result to display as exponent
         }
         #endregion BUTTON METHODS
@@ -100,13 +78,9 @@ namespace AstroMathClient
         {
             textBoxObservedWavelength.Clear();
             textBoxRestWavelength.Clear();
-            textBoxStarVelocity.Clear();
             textBoxParallaxAngle.Clear();
-            textBoxStarDistance.Clear();
             textBoxCelsius.Clear();
-            textBoxKelvin.Clear();
             textBoxSchwarzschild.Clear();
-            textBoxEventHorizon.Clear();
         }
 
         public void ResetToDefault()
@@ -114,6 +88,15 @@ namespace AstroMathClient
             ClearAllTextBoxes();
             DayMode();
             SetLanguageToEnglish();
+        }
+
+        public void DisplayCalculationResult(string a, string b, string c, string d)
+        {
+            ListViewItem lvi = new ListViewItem(a);
+            lvi.SubItems.Add(b);
+            lvi.SubItems.Add(c);
+            lvi.SubItems.Add(d);
+            listViewOutput.Items.Insert(0, lvi);
         }
         #endregion UTILITIES
 
@@ -123,7 +106,10 @@ namespace AstroMathClient
             switch (errorCode)
             {
                 case 0: 
-                    toolStripStatus.Text = "test";
+                    toolStripStatus.Text = "Please enter a temperature greater than -273 Celsius";
+                    break;
+                case 1:
+                    toolStripStatus.Text = "Temperature converted";
                     break;
                 default:
                     break;
@@ -170,7 +156,6 @@ namespace AstroMathClient
             menuStripLanguage.DropDown.BackColor = colour;
             statusStrip.BackColor = colour;
             listViewOutput.BackColor = colour;
-            //toolStripStatus.BackColor = colour;
         }
 
         private void ChangeForeColours(Color colour)
@@ -186,7 +171,6 @@ namespace AstroMathClient
             menuStripLanguage.DropDown.ForeColor = colour;
             statusStrip.ForeColor = colour;
             listViewOutput.ForeColor = colour;
-            //toolStripStatus.ForeColor = colour;
         }
         private void DayMode()
         {
@@ -231,10 +215,19 @@ namespace AstroMathClient
         #region LANGUAGE MENU
         public void SetLanguageToEnglish()
         {
-            labelStarVelocity.Text = "STAR VELOCITY";
+            menuStripLanguageEnglish.Enabled = true;
+            menuStripLanguageFrench.Enabled = true;
+            menuStripLanguageGerman.Enabled = true;
+            ActiveForm.Text = "Astro Math Client";
+            labelStarVelocity.Text = "       STAR VELOCITY       ";
             labelStarDistance.Text = "STAR DISTANCE";
-            labelTemperature.Text = "TEMPERATURE IN KELVIN";
-            labelEventHorizon.Text = "EVENT HORIZON";
+            labelTemperature.Text = "TEMPERATURE";
+            labelEventHorizon.Text = "        EVENT HORIZON        ";
+            labelObservedWavelength.Text = "Observed Wavelength (nm)";
+            labelRestWavelength.Text = "    Rest Wavelength (nm)    ";
+            labelParallaxAngle.Text = "Parallax Angle (arcsec)";
+            labelCelsius.Text = "Celsius (degrees)";
+            labelSchwarzschild.Text = "Schwarzschild Radius (m)";
             buttonCalculateStarVelocity.Text = "CALCULATE";
             buttonCalculateStarDistance.Text = "CALCULATE";
             buttonConvertTemperature.Text = "CONVERT";
@@ -251,15 +244,99 @@ namespace AstroMathClient
             menuStripLanguageEnglish.Text = "English";
             menuStripLanguageFrench.Text = "French";
             menuStripLanguageGerman.Text = "German";
+            listViewOutput.Columns[0].Text = "Velocity (m/s)";
+            listViewOutput.Columns[1].Text = "Distance (parsecs)";
+            listViewOutput.Columns[2].Text = "Kelvin";
+            listViewOutput.Columns[3].Text = "Event Horizon (m)";
         }
 
         public void SetLanguageToFrench()
         {
-
+            menuStripLanguageEnglish.Enabled = true;
+            menuStripLanguageFrench.Enabled = true;
+            menuStripLanguageGerman.Enabled = true;
+            ActiveForm.Text = "Client Astro Math";
+            labelStarVelocity.Text = "    VÉLOCITÉ DES ÉTOILES    ";
+            labelStarDistance.Text = "DISTANCE ÉTOILE";
+            labelTemperature.Text = "TEMPÉRATURE";
+            labelEventHorizon.Text = "HORIZON DES ÉVÉNEMENTS";
+            labelObservedWavelength.Text = "Longueur d'onde observée (nm)";
+            labelRestWavelength.Text = "Longueur d'onde de repos (nm)";
+            labelParallaxAngle.Text = "Angle de parallaxe (arcsec)";
+            labelCelsius.Text = "Celsius (degrees)";
+            labelSchwarzschild.Text = "Rayon de Schwarzschild (m)";
+            buttonCalculateStarVelocity.Text = "CALCULER";
+            buttonCalculateStarDistance.Text = "CALCULER";
+            buttonConvertTemperature.Text = "CONVERTIR";
+            buttonCalculateEventHorizon.Text = "CALCULER";
+            menuStripFile.Text = "Fichier";
+            menuStripFileClearTextboxes.Text = "Effacer les boites de texte";
+            menuStripFileResetToDefault.Text = "Réinitialiser par défaut";
+            menuStripFileExit.Text = "Sortir";
+            menuStripCustomisation.Text = "Personnalisation";
+            menuStripCustomisationDay.Text = "Mode Jour";
+            menuStripCustomisationNight.Text = "Mode Nuit";
+            menuStripCustomisationCustom.Text = "Thème personnalisé";
+            menuStripLanguage.Text = "Langue";
+            menuStripLanguageEnglish.Text = "Anglais";
+            menuStripLanguageFrench.Text = "Français";
+            menuStripLanguageGerman.Text = "Allemand";
+            listViewOutput.Columns[0].Text = "Vélocité (m/s)";
+            listViewOutput.Columns[1].Text = "Distance (parsecs)";
+            listViewOutput.Columns[2].Text = "Kelvin";
+            listViewOutput.Columns[3].Text = "Horizon des événements (m)";
         }
         public void SetLanguageToGerman()
         {
+            menuStripLanguageEnglish.Enabled = true;
+            menuStripLanguageFrench.Enabled = true;
+            menuStripLanguageGerman.Enabled = true;
+            ActiveForm.Text = "Astro Math - Client";
+            labelStarVelocity.Text = "STERNGESCHWINDIGKEIT";
+            labelStarDistance.Text = "STERNENABSTAND";
+            labelTemperature.Text = "TEMPERATUR";
+            labelEventHorizon.Text = "    EREIGNISHORIZONT    ";
+            labelObservedWavelength.Text = "Beobachtete Wellenlänge (nm)";
+            labelRestWavelength.Text = "    Ruhewellenlänge (nm)    ";
+            labelParallaxAngle.Text = "Parallaxenwinkel (arcsec)";
+            labelCelsius.Text = "Celsius (degrees)";
+            labelSchwarzschild.Text = "Schwarzschild-Radius (m)";
+            buttonCalculateStarVelocity.Text = "BERECHNUNG";
+            buttonCalculateStarDistance.Text = "BERECHNUNG";
+            buttonConvertTemperature.Text = "KONVERTIEREN";
+            buttonCalculateEventHorizon.Text = "BERECHNUNG";
+            menuStripFile.Text = "Akte";
+            menuStripFileClearTextboxes.Text = "Textfelder löschen";
+            menuStripFileResetToDefault.Text = "Zurücksetzen";
+            menuStripFileExit.Text = "Ausgang";
+            menuStripCustomisation.Text = "Anpassung";
+            menuStripCustomisationDay.Text = "Tagesmodus";
+            menuStripCustomisationNight.Text = "Nacht-Modus";
+            menuStripCustomisationCustom.Text = "Benutzerdefiniertes Design";
+            menuStripLanguage.Text = "Sprache";
+            menuStripLanguageEnglish.Text = "Englisch";
+            menuStripLanguageFrench.Text = "Französisch";
+            menuStripLanguageGerman.Text = "Deutsch";
+            listViewOutput.Columns[0].Text = "Geschwindigkeit (m/s)";
+            listViewOutput.Columns[1].Text = "Distanz (parsecs)";
+            listViewOutput.Columns[2].Text = "Kelvin";
+            listViewOutput.Columns[3].Text = "Ereignishorizont (m)";
+        }
+        private void menuStripLanguageEnglish_Click(object sender, EventArgs e)
+        {
+            SetLanguageToEnglish();
+            menuStripLanguageEnglish.Enabled = false;
+        }
+        private void menuStripLanguageFrench_Click(object sender, EventArgs e)
+        {
+            SetLanguageToFrench();
+            menuStripLanguageFrench.Enabled = false;
+        }
 
+        private void menuStripLanguageGerman_Click(object sender, EventArgs e)
+        {
+            SetLanguageToGerman();
+            menuStripLanguageGerman.Enabled = false;
         }
         #endregion LANGUAGE MENU
     }
