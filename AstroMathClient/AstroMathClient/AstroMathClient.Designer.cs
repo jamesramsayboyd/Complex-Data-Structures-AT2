@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AstroMathClient));
             this.textBoxObservedWavelength = new System.Windows.Forms.TextBox();
             this.textBoxRestWavelength = new System.Windows.Forms.TextBox();
             this.buttonCalculateStarVelocity = new System.Windows.Forms.Button();
@@ -76,124 +77,78 @@
             // 
             // textBoxObservedWavelength
             // 
-            this.textBoxObservedWavelength.Location = new System.Drawing.Point(55, 75);
+            resources.ApplyResources(this.textBoxObservedWavelength, "textBoxObservedWavelength");
             this.textBoxObservedWavelength.Name = "textBoxObservedWavelength";
-            this.textBoxObservedWavelength.Size = new System.Drawing.Size(100, 20);
-            this.textBoxObservedWavelength.TabIndex = 0;
             // 
             // textBoxRestWavelength
             // 
-            this.textBoxRestWavelength.Location = new System.Drawing.Point(55, 116);
+            resources.ApplyResources(this.textBoxRestWavelength, "textBoxRestWavelength");
             this.textBoxRestWavelength.Name = "textBoxRestWavelength";
-            this.textBoxRestWavelength.Size = new System.Drawing.Size(100, 20);
-            this.textBoxRestWavelength.TabIndex = 1;
             // 
             // buttonCalculateStarVelocity
             // 
             this.buttonCalculateStarVelocity.BackColor = System.Drawing.Color.White;
-            this.buttonCalculateStarVelocity.Location = new System.Drawing.Point(60, 149);
+            resources.ApplyResources(this.buttonCalculateStarVelocity, "buttonCalculateStarVelocity");
             this.buttonCalculateStarVelocity.Name = "buttonCalculateStarVelocity";
-            this.buttonCalculateStarVelocity.Size = new System.Drawing.Size(91, 23);
-            this.buttonCalculateStarVelocity.TabIndex = 2;
-            this.buttonCalculateStarVelocity.Text = "CALCULATE";
             this.buttonCalculateStarVelocity.UseVisualStyleBackColor = false;
             this.buttonCalculateStarVelocity.Click += new System.EventHandler(this.buttonCalculateStarVelocity_Click);
             // 
             // labelStarVelocity
             // 
-            this.labelStarVelocity.AutoSize = true;
-            this.labelStarVelocity.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelStarVelocity.Location = new System.Drawing.Point(12, 36);
+            resources.ApplyResources(this.labelStarVelocity, "labelStarVelocity");
             this.labelStarVelocity.Name = "labelStarVelocity";
-            this.labelStarVelocity.Size = new System.Drawing.Size(181, 16);
-            this.labelStarVelocity.TabIndex = 4;
-            this.labelStarVelocity.Text = "       STAR VELOCITY       ";
-            this.labelStarVelocity.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // labelStarDistance
             // 
-            this.labelStarDistance.AutoSize = true;
-            this.labelStarDistance.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelStarDistance.Location = new System.Drawing.Point(234, 36);
+            resources.ApplyResources(this.labelStarDistance, "labelStarDistance");
             this.labelStarDistance.Name = "labelStarDistance";
-            this.labelStarDistance.Size = new System.Drawing.Size(128, 16);
-            this.labelStarDistance.TabIndex = 5;
-            this.labelStarDistance.Text = "STAR DISTANCE";
-            this.labelStarDistance.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // textBoxParallaxAngle
             // 
-            this.textBoxParallaxAngle.Location = new System.Drawing.Point(248, 75);
+            resources.ApplyResources(this.textBoxParallaxAngle, "textBoxParallaxAngle");
             this.textBoxParallaxAngle.Name = "textBoxParallaxAngle";
-            this.textBoxParallaxAngle.Size = new System.Drawing.Size(100, 20);
-            this.textBoxParallaxAngle.TabIndex = 6;
             // 
             // buttonCalculateStarDistance
             // 
             this.buttonCalculateStarDistance.BackColor = System.Drawing.Color.White;
-            this.buttonCalculateStarDistance.Location = new System.Drawing.Point(253, 149);
+            resources.ApplyResources(this.buttonCalculateStarDistance, "buttonCalculateStarDistance");
             this.buttonCalculateStarDistance.Name = "buttonCalculateStarDistance";
-            this.buttonCalculateStarDistance.Size = new System.Drawing.Size(91, 23);
-            this.buttonCalculateStarDistance.TabIndex = 8;
-            this.buttonCalculateStarDistance.Text = "CALCULATE";
             this.buttonCalculateStarDistance.UseVisualStyleBackColor = false;
             this.buttonCalculateStarDistance.Click += new System.EventHandler(this.buttonCalculateStarDistance_Click);
             // 
             // labelTemperature
             // 
-            this.labelTemperature.AutoSize = true;
-            this.labelTemperature.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelTemperature.Location = new System.Drawing.Point(438, 36);
+            resources.ApplyResources(this.labelTemperature, "labelTemperature");
             this.labelTemperature.Name = "labelTemperature";
-            this.labelTemperature.Size = new System.Drawing.Size(122, 16);
-            this.labelTemperature.TabIndex = 9;
-            this.labelTemperature.Text = "TEMPERATURE";
-            this.labelTemperature.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // textBoxCelsius
             // 
-            this.textBoxCelsius.Location = new System.Drawing.Point(449, 75);
+            resources.ApplyResources(this.textBoxCelsius, "textBoxCelsius");
             this.textBoxCelsius.Name = "textBoxCelsius";
-            this.textBoxCelsius.Size = new System.Drawing.Size(100, 20);
-            this.textBoxCelsius.TabIndex = 10;
             // 
             // buttonConvertTemperature
             // 
             this.buttonConvertTemperature.BackColor = System.Drawing.Color.White;
-            this.buttonConvertTemperature.Location = new System.Drawing.Point(454, 149);
+            resources.ApplyResources(this.buttonConvertTemperature, "buttonConvertTemperature");
             this.buttonConvertTemperature.Name = "buttonConvertTemperature";
-            this.buttonConvertTemperature.Size = new System.Drawing.Size(91, 23);
-            this.buttonConvertTemperature.TabIndex = 11;
-            this.buttonConvertTemperature.Text = "CONVERT";
             this.buttonConvertTemperature.UseVisualStyleBackColor = false;
             this.buttonConvertTemperature.Click += new System.EventHandler(this.buttonConvertTemperature_Click);
             // 
             // labelEventHorizon
             // 
-            this.labelEventHorizon.AutoSize = true;
-            this.labelEventHorizon.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelEventHorizon.Location = new System.Drawing.Point(576, 36);
+            resources.ApplyResources(this.labelEventHorizon, "labelEventHorizon");
             this.labelEventHorizon.Name = "labelEventHorizon";
-            this.labelEventHorizon.Size = new System.Drawing.Size(194, 16);
-            this.labelEventHorizon.TabIndex = 13;
-            this.labelEventHorizon.Text = "        EVENT HORIZON        ";
-            this.labelEventHorizon.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // textBoxSchwarzschild
             // 
-            this.textBoxSchwarzschild.Location = new System.Drawing.Point(597, 75);
+            resources.ApplyResources(this.textBoxSchwarzschild, "textBoxSchwarzschild");
             this.textBoxSchwarzschild.Name = "textBoxSchwarzschild";
-            this.textBoxSchwarzschild.Size = new System.Drawing.Size(100, 20);
-            this.textBoxSchwarzschild.TabIndex = 14;
             // 
             // buttonCalculateEventHorizon
             // 
             this.buttonCalculateEventHorizon.BackColor = System.Drawing.Color.White;
-            this.buttonCalculateEventHorizon.Location = new System.Drawing.Point(629, 149);
+            resources.ApplyResources(this.buttonCalculateEventHorizon, "buttonCalculateEventHorizon");
             this.buttonCalculateEventHorizon.Name = "buttonCalculateEventHorizon";
-            this.buttonCalculateEventHorizon.Size = new System.Drawing.Size(91, 23);
-            this.buttonCalculateEventHorizon.TabIndex = 15;
-            this.buttonCalculateEventHorizon.Text = "CALCULATE";
             this.buttonCalculateEventHorizon.UseVisualStyleBackColor = false;
             this.buttonCalculateEventHorizon.Click += new System.EventHandler(this.buttonCalculateEventHorizon_Click);
             // 
@@ -202,17 +157,13 @@
             this.statusStrip.BackColor = System.Drawing.Color.White;
             this.statusStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripStatus});
-            this.statusStrip.Location = new System.Drawing.Point(0, 282);
+            resources.ApplyResources(this.statusStrip, "statusStrip");
             this.statusStrip.Name = "statusStrip";
-            this.statusStrip.Size = new System.Drawing.Size(795, 22);
-            this.statusStrip.TabIndex = 17;
-            this.statusStrip.Text = "statusStrip1";
             // 
             // toolStripStatus
             // 
             this.toolStripStatus.Name = "toolStripStatus";
-            this.toolStripStatus.Size = new System.Drawing.Size(12, 17);
-            this.toolStripStatus.Text = "-";
+            resources.ApplyResources(this.toolStripStatus, "toolStripStatus");
             // 
             // mainMenuStrip
             // 
@@ -221,11 +172,8 @@
             this.menuStripFile,
             this.menuStripCustomisation,
             this.menuStripLanguage});
-            this.mainMenuStrip.Location = new System.Drawing.Point(0, 0);
+            resources.ApplyResources(this.mainMenuStrip, "mainMenuStrip");
             this.mainMenuStrip.Name = "mainMenuStrip";
-            this.mainMenuStrip.Size = new System.Drawing.Size(795, 24);
-            this.mainMenuStrip.TabIndex = 19;
-            this.mainMenuStrip.Text = "menuStrip1";
             // 
             // menuStripFile
             // 
@@ -234,28 +182,24 @@
             this.menuStripFileResetToDefault,
             this.menuStripFileExit});
             this.menuStripFile.Name = "menuStripFile";
-            this.menuStripFile.Size = new System.Drawing.Size(37, 20);
-            this.menuStripFile.Text = "File";
+            resources.ApplyResources(this.menuStripFile, "menuStripFile");
             // 
             // menuStripFileClearTextboxes
             // 
             this.menuStripFileClearTextboxes.Name = "menuStripFileClearTextboxes";
-            this.menuStripFileClearTextboxes.Size = new System.Drawing.Size(157, 22);
-            this.menuStripFileClearTextboxes.Text = "Clear Textboxes";
+            resources.ApplyResources(this.menuStripFileClearTextboxes, "menuStripFileClearTextboxes");
             this.menuStripFileClearTextboxes.Click += new System.EventHandler(this.menuStripFileClearTextboxes_Click);
             // 
             // menuStripFileResetToDefault
             // 
             this.menuStripFileResetToDefault.Name = "menuStripFileResetToDefault";
-            this.menuStripFileResetToDefault.Size = new System.Drawing.Size(157, 22);
-            this.menuStripFileResetToDefault.Text = "Reset to Default";
+            resources.ApplyResources(this.menuStripFileResetToDefault, "menuStripFileResetToDefault");
             this.menuStripFileResetToDefault.Click += new System.EventHandler(this.resetToDefaultToolStripMenuItem_Click);
             // 
             // menuStripFileExit
             // 
             this.menuStripFileExit.Name = "menuStripFileExit";
-            this.menuStripFileExit.Size = new System.Drawing.Size(157, 22);
-            this.menuStripFileExit.Text = "Exit";
+            resources.ApplyResources(this.menuStripFileExit, "menuStripFileExit");
             this.menuStripFileExit.Click += new System.EventHandler(this.menuStripFileExit_Click);
             // 
             // menuStripCustomisation
@@ -265,29 +209,24 @@
             this.menuStripCustomisationNight,
             this.menuStripCustomisationCustom});
             this.menuStripCustomisation.Name = "menuStripCustomisation";
-            this.menuStripCustomisation.Size = new System.Drawing.Size(96, 20);
-            this.menuStripCustomisation.Text = "Customisation";
+            resources.ApplyResources(this.menuStripCustomisation, "menuStripCustomisation");
             // 
             // menuStripCustomisationDay
             // 
-            this.menuStripCustomisationDay.Enabled = false;
+            resources.ApplyResources(this.menuStripCustomisationDay, "menuStripCustomisationDay");
             this.menuStripCustomisationDay.Name = "menuStripCustomisationDay";
-            this.menuStripCustomisationDay.Size = new System.Drawing.Size(155, 22);
-            this.menuStripCustomisationDay.Text = "Day Mode";
             this.menuStripCustomisationDay.Click += new System.EventHandler(this.menuStripCustomisationDay_Click);
             // 
             // menuStripCustomisationNight
             // 
             this.menuStripCustomisationNight.Name = "menuStripCustomisationNight";
-            this.menuStripCustomisationNight.Size = new System.Drawing.Size(155, 22);
-            this.menuStripCustomisationNight.Text = "Night Mode";
+            resources.ApplyResources(this.menuStripCustomisationNight, "menuStripCustomisationNight");
             this.menuStripCustomisationNight.Click += new System.EventHandler(this.menuStripCustomisationNight_Click);
             // 
             // menuStripCustomisationCustom
             // 
             this.menuStripCustomisationCustom.Name = "menuStripCustomisationCustom";
-            this.menuStripCustomisationCustom.Size = new System.Drawing.Size(155, 22);
-            this.menuStripCustomisationCustom.Text = "Custom Theme";
+            resources.ApplyResources(this.menuStripCustomisationCustom, "menuStripCustomisationCustom");
             this.menuStripCustomisationCustom.Click += new System.EventHandler(this.menuStripCustomisationCustom_Click);
             // 
             // menuStripLanguage
@@ -297,96 +236,60 @@
             this.menuStripLanguageFrench,
             this.menuStripLanguageGerman});
             this.menuStripLanguage.Name = "menuStripLanguage";
-            this.menuStripLanguage.Size = new System.Drawing.Size(71, 20);
-            this.menuStripLanguage.Text = "Language";
+            resources.ApplyResources(this.menuStripLanguage, "menuStripLanguage");
             // 
             // menuStripLanguageEnglish
             // 
-            this.menuStripLanguageEnglish.Enabled = false;
             this.menuStripLanguageEnglish.Name = "menuStripLanguageEnglish";
-            this.menuStripLanguageEnglish.Size = new System.Drawing.Size(180, 22);
-            this.menuStripLanguageEnglish.Text = "English";
+            resources.ApplyResources(this.menuStripLanguageEnglish, "menuStripLanguageEnglish");
             this.menuStripLanguageEnglish.Click += new System.EventHandler(this.menuStripLanguageEnglish_Click);
             // 
             // menuStripLanguageFrench
             // 
             this.menuStripLanguageFrench.Name = "menuStripLanguageFrench";
-            this.menuStripLanguageFrench.Size = new System.Drawing.Size(116, 22);
-            this.menuStripLanguageFrench.Text = "French";
+            resources.ApplyResources(this.menuStripLanguageFrench, "menuStripLanguageFrench");
             this.menuStripLanguageFrench.Click += new System.EventHandler(this.menuStripLanguageFrench_Click);
             // 
             // menuStripLanguageGerman
             // 
             this.menuStripLanguageGerman.Name = "menuStripLanguageGerman";
-            this.menuStripLanguageGerman.Size = new System.Drawing.Size(116, 22);
-            this.menuStripLanguageGerman.Text = "German";
+            resources.ApplyResources(this.menuStripLanguageGerman, "menuStripLanguageGerman");
             this.menuStripLanguageGerman.Click += new System.EventHandler(this.menuStripLanguageGerman_Click);
             // 
             // labelObservedWavelength
             // 
-            this.labelObservedWavelength.AutoSize = true;
-            this.labelObservedWavelength.Location = new System.Drawing.Point(34, 57);
+            resources.ApplyResources(this.labelObservedWavelength, "labelObservedWavelength");
             this.labelObservedWavelength.Name = "labelObservedWavelength";
-            this.labelObservedWavelength.Size = new System.Drawing.Size(137, 13);
-            this.labelObservedWavelength.TabIndex = 20;
-            this.labelObservedWavelength.Text = "Observed Wavelength (nm)";
-            this.labelObservedWavelength.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // labelRestWavelength
             // 
-            this.labelRestWavelength.AutoSize = true;
-            this.labelRestWavelength.Location = new System.Drawing.Point(37, 100);
+            resources.ApplyResources(this.labelRestWavelength, "labelRestWavelength");
             this.labelRestWavelength.Name = "labelRestWavelength";
-            this.labelRestWavelength.Size = new System.Drawing.Size(137, 13);
-            this.labelRestWavelength.TabIndex = 21;
-            this.labelRestWavelength.Text = "    Rest Wavelength (nm)    ";
-            this.labelRestWavelength.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // labelParallaxAngle
             // 
-            this.labelParallaxAngle.AutoSize = true;
-            this.labelParallaxAngle.Location = new System.Drawing.Point(241, 57);
+            resources.ApplyResources(this.labelParallaxAngle, "labelParallaxAngle");
             this.labelParallaxAngle.Name = "labelParallaxAngle";
-            this.labelParallaxAngle.Size = new System.Drawing.Size(115, 13);
-            this.labelParallaxAngle.TabIndex = 22;
-            this.labelParallaxAngle.Text = "Parallax Angle (arcsec)";
-            this.labelParallaxAngle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // labelCelsius
             // 
-            this.labelCelsius.AutoSize = true;
-            this.labelCelsius.Location = new System.Drawing.Point(456, 57);
+            resources.ApplyResources(this.labelCelsius, "labelCelsius");
             this.labelCelsius.Name = "labelCelsius";
-            this.labelCelsius.Size = new System.Drawing.Size(87, 13);
-            this.labelCelsius.TabIndex = 23;
-            this.labelCelsius.Text = "Celsius (degrees)";
-            this.labelCelsius.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // labelSchwarzschild
             // 
-            this.labelSchwarzschild.AutoSize = true;
-            this.labelSchwarzschild.Location = new System.Drawing.Point(610, 57);
+            resources.ApplyResources(this.labelSchwarzschild, "labelSchwarzschild");
             this.labelSchwarzschild.Name = "labelSchwarzschild";
-            this.labelSchwarzschild.Size = new System.Drawing.Size(128, 13);
-            this.labelSchwarzschild.TabIndex = 24;
-            this.labelSchwarzschild.Text = "Schwarzschild Radius (m)";
-            this.labelSchwarzschild.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // textBoxExponent
             // 
-            this.textBoxExponent.Location = new System.Drawing.Point(730, 75);
+            resources.ApplyResources(this.textBoxExponent, "textBoxExponent");
             this.textBoxExponent.Name = "textBoxExponent";
-            this.textBoxExponent.Size = new System.Drawing.Size(24, 20);
-            this.textBoxExponent.TabIndex = 25;
             // 
             // label1
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(700, 78);
+            resources.ApplyResources(this.label1, "label1");
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(30, 13);
-            this.label1.TabIndex = 26;
-            this.label1.Text = "x10^";
             // 
             // listViewOutput
             // 
@@ -396,39 +299,32 @@
             this.columnTemperature,
             this.columnEventHorizon});
             this.listViewOutput.HideSelection = false;
-            this.listViewOutput.Location = new System.Drawing.Point(28, 190);
+            resources.ApplyResources(this.listViewOutput, "listViewOutput");
             this.listViewOutput.Name = "listViewOutput";
-            this.listViewOutput.Size = new System.Drawing.Size(742, 85);
-            this.listViewOutput.TabIndex = 27;
             this.listViewOutput.UseCompatibleStateImageBehavior = false;
             this.listViewOutput.View = System.Windows.Forms.View.Details;
             // 
             // columnVelocity
             // 
-            this.columnVelocity.Text = "Velocity (m/s)";
-            this.columnVelocity.Width = 178;
+            resources.ApplyResources(this.columnVelocity, "columnVelocity");
             // 
             // columnDistance
             // 
-            this.columnDistance.Text = "Distance (parsecs)";
-            this.columnDistance.Width = 210;
+            resources.ApplyResources(this.columnDistance, "columnDistance");
             // 
             // columnTemperature
             // 
-            this.columnTemperature.Text = "Kelvin";
-            this.columnTemperature.Width = 180;
+            resources.ApplyResources(this.columnTemperature, "columnTemperature");
             // 
             // columnEventHorizon
             // 
-            this.columnEventHorizon.Text = "Event Horizon (m)";
-            this.columnEventHorizon.Width = 151;
+            resources.ApplyResources(this.columnEventHorizon, "columnEventHorizon");
             // 
             // AstroMathClient
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(795, 304);
             this.Controls.Add(this.listViewOutput);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.textBoxExponent);
@@ -454,7 +350,6 @@
             this.Controls.Add(this.textBoxObservedWavelength);
             this.MainMenuStrip = this.mainMenuStrip;
             this.Name = "AstroMathClient";
-            this.Text = "Astro Math Client";
             this.statusStrip.ResumeLayout(false);
             this.statusStrip.PerformLayout();
             this.mainMenuStrip.ResumeLayout(false);

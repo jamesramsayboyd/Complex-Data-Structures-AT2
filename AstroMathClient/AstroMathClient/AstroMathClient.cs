@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.ServiceModel;
+using System.Threading;
 
 namespace AstroMathClient
 {
@@ -19,47 +20,84 @@ namespace AstroMathClient
             ConnectToServer();
             //ResetToDefault();
         }
-        // Creating the pipe proxy for the interface as a global variable
+        // Global variables for pipe proxy, language and theme
         IAstroContract astroPipeProxy;
+        string systemLanguage = "English";
+        string systemTheme = "Day";
+        Color customBackColour = Color.White;
+        Color customForeColour = Color.Black;
 
         #region BUTTON METHODS
         private void buttonCalculateStarVelocity_Click(object sender, EventArgs e)
         {
-            double observedWavelength = double.Parse(textBoxObservedWavelength.Text);
-            double restWavelength = double.Parse(textBoxRestWavelength.Text);
-            double starVelocity = astroPipeProxy.StarVelocity(observedWavelength, restWavelength);
-            DisplayCalculationResult(starVelocity.ToString(), "", "", "");
+            if (!string.IsNullOrEmpty(textBoxObservedWavelength.Text) &&
+                !string.IsNullOrEmpty(textBoxRestWavelength.Text))
+            {
+                double observedWavelength = double.Parse(textBoxObservedWavelength.Text);
+                double restWavelength = double.Parse(textBoxRestWavelength.Text);
+                double starVelocity = astroPipeProxy.StarVelocity(observedWavelength, restWavelength);
+                DisplayCalculationResult(starVelocity.ToString(), "", "", "");
+                UserMessage(0);
+            }
+            else
+            {
+                UserMessage(1);
+            }
         }
 
         private void buttonCalculateStarDistance_Click(object sender, EventArgs e)
         {
-            double parallaxAngle = double.Parse(textBoxParallaxAngle.Text);
-            double starDistance = astroPipeProxy.StarDistance(parallaxAngle);
-            DisplayCalculationResult("", starDistance.ToString(), "", "");
+            if (!string.IsNullOrEmpty(textBoxParallaxAngle.Text))
+            {
+                double parallaxAngle = double.Parse(textBoxParallaxAngle.Text);
+                double starDistance = astroPipeProxy.StarDistance(parallaxAngle);
+                DisplayCalculationResult("", starDistance.ToString(), "", "");
+                UserMessage(0);
+            }
+            else
+            {
+                UserMessage(2);
+            }
         }
 
         private void buttonConvertTemperature_Click(object sender, EventArgs e)
         {
-            double temperatureInCelsius = double.Parse(textBoxCelsius.Text);
-            if (temperatureInCelsius >= -273)
+            if (!string.IsNullOrEmpty(textBoxCelsius.Text))
             {
-                double temperatureInKelvin = astroPipeProxy.TemperatureInKelvin(temperatureInCelsius);
-                DisplayCalculationResult("", "", temperatureInKelvin.ToString(), "");
+                double temperatureInCelsius = double.Parse(textBoxCelsius.Text);
+                if (temperatureInCelsius >= -273)
+                {
+                    double temperatureInKelvin = astroPipeProxy.TemperatureInKelvin(temperatureInCelsius);
+                    DisplayCalculationResult("", "", temperatureInKelvin.ToString(), "");
+                    UserMessage(0);
+                }
+                else
+                {
+                    UserMessage(3);
+                }
             }
             else
             {
-                ErrorMessage(0);
-            }            
+                UserMessage(4);
+            }
         }
 
         private void buttonCalculateEventHorizon_Click(object sender, EventArgs e)
         {
-            double baseNo = double.Parse(textBoxSchwarzschild.Text);
-            double exponentNo = double.Parse(textBoxExponent.Text);
-            double schwarzschildRadius = baseNo * (Math.Pow(10, exponentNo));
-            double eventHorizon = astroPipeProxy.EventHorizon(schwarzschildRadius);
-            DisplayCalculationResult("", "", "", eventHorizon.ToString());
-            // TODO: Format result to display as exponent
+            if (!string.IsNullOrEmpty(textBoxSchwarzschild.Text) &&
+                !string.IsNullOrEmpty(textBoxExponent.Text))
+            {
+                double baseNo = double.Parse(textBoxSchwarzschild.Text);
+                double exponentNo = double.Parse(textBoxExponent.Text);
+                double schwarzschildRadius = baseNo * Math.Pow(10, exponentNo);
+                double eventHorizon = astroPipeProxy.EventHorizon(schwarzschildRadius);
+                DisplayCalculationResult("", "", "", eventHorizon.ToString());
+                UserMessage(0);
+            }
+            else
+            {
+                UserMessage(5);
+            }
         }
         #endregion BUTTON METHODS
 
@@ -81,13 +119,15 @@ namespace AstroMathClient
             textBoxParallaxAngle.Clear();
             textBoxCelsius.Clear();
             textBoxSchwarzschild.Clear();
+            textBoxExponent.Clear();
+            listViewOutput.Items.Clear();
         }
 
         public void ResetToDefault()
         {
             ClearAllTextBoxes();
-            DayMode();
-            SetLanguageToEnglish();
+            ChangeTheme("Day");
+            SetLanguage("English");
         }
 
         public void DisplayCalculationResult(string a, string b, string c, string d)
@@ -101,24 +141,88 @@ namespace AstroMathClient
         #endregion UTILITIES
 
         #region USER MESSAGING
-        private void ErrorMessage(int errorCode)
+        private void UserMessage(int errorCode)
         {
-            switch (errorCode)
+            switch (systemLanguage)
             {
-                case 0: 
-                    toolStripStatus.Text = "Please enter a temperature greater than -273 Celsius";
+                case "English":
+                    switch (errorCode)
+                    {
+                        case 0:
+                            toolStripStatus.Text = "";
+                            break;
+                        case 1:
+                            toolStripStatus.Text = "Please enter wavelength values";
+                            break;
+                        case 2:
+                            toolStripStatus.Text = "Please enter parallax angle";
+                            break;
+                        case 3:
+                            toolStripStatus.Text = "Please enter a temperature above -273 degrees";
+                            break;
+                        case 4:
+                            toolStripStatus.Text = "Please enter temperature";
+                            break;
+                        case 5:
+                            toolStripStatus.Text = "Please enter Schwarzschild radius";
+                            break;
+                        default:
+                            break;
+                    }
                     break;
-                case 1:
-                    toolStripStatus.Text = "Temperature converted";
+                case "French":
+                    switch (errorCode)
+                    {
+                        case 0:
+                            toolStripStatus.Text = "";
+                            break;
+                        case 1:
+                            toolStripStatus.Text = "Veuillez entrer les valeurs de longueur d'onde";
+                            break;
+                        case 2:
+                            toolStripStatus.Text = "Veuillez entrer l'angle de parallaxe";
+                            break;
+                        case 3:
+                            toolStripStatus.Text = "Veuillez saisir une température supérieure à -273 degrés";
+                            break;
+                        case 4:
+                            toolStripStatus.Text = "Veuillez saisir une température";
+                            break;
+                        case 5:
+                            toolStripStatus.Text = "Veuillez entrer le rayon de Schwarzschild";
+                            break;
+                        default:
+                            break;
+                    }
+                    break;
+                case "German":
+                    switch (errorCode)
+                    {
+                        case 0:
+                            toolStripStatus.Text = "";
+                            break;
+                        case 1:
+                            toolStripStatus.Text = "Bitte geben Sie Wellenlängenwerte ein";
+                            break;
+                        case 2:
+                            toolStripStatus.Text = "Bitte geben Sie den Parallaxenwinkel ein";
+                            break;
+                        case 3:
+                            toolStripStatus.Text = "Bitte geben Sie eine Temperatur über -273 Grad ein";
+                            break;
+                        case 4:
+                            toolStripStatus.Text = "Bitte geben Sie die Temperatur ein";
+                            break;
+                        case 5:
+                            toolStripStatus.Text = "Bitte geben Sie den Schwarzschild-Radius ein";
+                            break;
+                        default:
+                            break;
+                    }
                     break;
                 default:
                     break;
             }
-        }
-
-        private void ToolTips()
-        {
-
         }
         #endregion USER MESSAGING
 
@@ -172,170 +276,103 @@ namespace AstroMathClient
             statusStrip.ForeColor = colour;
             listViewOutput.ForeColor = colour;
         }
-        private void DayMode()
-        {
-            ChangeBackColours(Color.White);
-            ChangeForeColours(Color.Black);
-        }
-
-        private void NightMode()
-        {
-            ChangeBackColours(Color.Black);
-            ChangeForeColours(Color.White);
-        }
 
         private void CustomTheme()
         {
-            // TODO: Implement colour picker menu
-            Color customBackColour = Color.White;
-            Color customForeColour = Color.Black;
-            ChangeBackColours(customBackColour);
-            ChangeForeColours(customForeColour);
+            ColorDialog colorDialog = new ColorDialog();
+            colorDialog.ShowDialog(Owner);
+            customBackColour = colorDialog.Color;
+            //customForeColour = colorDialog.Color;
+        }
+
+        private void ChangeTheme(string theme)
+        {
+            switch (theme)
+            {
+                case "Day":
+                    systemTheme = "Day";
+                    ChangeBackColours(Color.White);
+                    ChangeForeColours(Color.Black);
+                    break;
+                case "Night":
+                    systemTheme = "Night";
+                    ChangeBackColours(Color.Black);
+                    ChangeForeColours(Color.White);
+                    break;
+                case "Custom":
+                    systemTheme = "Custom";
+                    ChangeBackColours(customBackColour);
+                    ChangeForeColours(customForeColour);
+                    break;
+                default:
+                    break;
+            }
         }
 
         private void menuStripCustomisationDay_Click(object sender, EventArgs e)
         {
-            DayMode();
+            ChangeTheme("Day");
             menuStripCustomisationDay.Enabled = false;
         }
 
         private void menuStripCustomisationNight_Click(object sender, EventArgs e)
         {
-            NightMode();
+            ChangeTheme("Night");
             menuStripCustomisationNight.Enabled = false;
         }
 
         private void menuStripCustomisationCustom_Click(object sender, EventArgs e)
         {
-            CustomTheme();
+            ChangeTheme("Custom");
             menuStripCustomisationCustom.Enabled = false;
         }
         #endregion CUSTOMISATION MENU
 
         #region LANGUAGE MENU
-        public void SetLanguageToEnglish()
+        public void SetLanguage(string language)
         {
             menuStripLanguageEnglish.Enabled = true;
             menuStripLanguageFrench.Enabled = true;
             menuStripLanguageGerman.Enabled = true;
-            ActiveForm.Text = "Astro Math Client";
-            labelStarVelocity.Text = "       STAR VELOCITY       ";
-            labelStarDistance.Text = "STAR DISTANCE";
-            labelTemperature.Text = "TEMPERATURE";
-            labelEventHorizon.Text = "        EVENT HORIZON        ";
-            labelObservedWavelength.Text = "Observed Wavelength (nm)";
-            labelRestWavelength.Text = "    Rest Wavelength (nm)    ";
-            labelParallaxAngle.Text = "Parallax Angle (arcsec)";
-            labelCelsius.Text = "Celsius (degrees)";
-            labelSchwarzschild.Text = "Schwarzschild Radius (m)";
-            buttonCalculateStarVelocity.Text = "CALCULATE";
-            buttonCalculateStarDistance.Text = "CALCULATE";
-            buttonConvertTemperature.Text = "CONVERT";
-            buttonCalculateEventHorizon.Text = "CALCULATE";
-            menuStripFile.Text = "File";
-            menuStripFileClearTextboxes.Text = "Clear Textboxes";
-            menuStripFileResetToDefault.Text = "Reset to Default";
-            menuStripFileExit.Text = "Exit";
-            menuStripCustomisation.Text = "Customisation";
-            menuStripCustomisationDay.Text = "Day Mode";
-            menuStripCustomisationNight.Text = "Night Mode";
-            menuStripCustomisationCustom.Text = "Custom Theme";
-            menuStripLanguage.Text = "Language";
-            menuStripLanguageEnglish.Text = "English";
-            menuStripLanguageFrench.Text = "French";
-            menuStripLanguageGerman.Text = "German";
-            listViewOutput.Columns[0].Text = "Velocity (m/s)";
-            listViewOutput.Columns[1].Text = "Distance (parsecs)";
-            listViewOutput.Columns[2].Text = "Kelvin";
-            listViewOutput.Columns[3].Text = "Event Horizon (m)";
-        }
+            UserMessage(0);
 
-        public void SetLanguageToFrench()
-        {
-            menuStripLanguageEnglish.Enabled = true;
-            menuStripLanguageFrench.Enabled = true;
-            menuStripLanguageGerman.Enabled = true;
-            ActiveForm.Text = "Client Astro Math";
-            labelStarVelocity.Text = "    VÉLOCITÉ DES ÉTOILES    ";
-            labelStarDistance.Text = "DISTANCE ÉTOILE";
-            labelTemperature.Text = "TEMPÉRATURE";
-            labelEventHorizon.Text = "HORIZON DES ÉVÉNEMENTS";
-            labelObservedWavelength.Text = "Longueur d'onde observée (nm)";
-            labelRestWavelength.Text = "Longueur d'onde de repos (nm)";
-            labelParallaxAngle.Text = "Angle de parallaxe (arcsec)";
-            labelCelsius.Text = "Celsius (degrees)";
-            labelSchwarzschild.Text = "Rayon de Schwarzschild (m)";
-            buttonCalculateStarVelocity.Text = "CALCULER";
-            buttonCalculateStarDistance.Text = "CALCULER";
-            buttonConvertTemperature.Text = "CONVERTIR";
-            buttonCalculateEventHorizon.Text = "CALCULER";
-            menuStripFile.Text = "Fichier";
-            menuStripFileClearTextboxes.Text = "Effacer les boites de texte";
-            menuStripFileResetToDefault.Text = "Réinitialiser par défaut";
-            menuStripFileExit.Text = "Sortir";
-            menuStripCustomisation.Text = "Personnalisation";
-            menuStripCustomisationDay.Text = "Mode Jour";
-            menuStripCustomisationNight.Text = "Mode Nuit";
-            menuStripCustomisationCustom.Text = "Thème personnalisé";
-            menuStripLanguage.Text = "Langue";
-            menuStripLanguageEnglish.Text = "Anglais";
-            menuStripLanguageFrench.Text = "Français";
-            menuStripLanguageGerman.Text = "Allemand";
-            listViewOutput.Columns[0].Text = "Vélocité (m/s)";
-            listViewOutput.Columns[1].Text = "Distance (parsecs)";
-            listViewOutput.Columns[2].Text = "Kelvin";
-            listViewOutput.Columns[3].Text = "Horizon des événements (m)";
-        }
-        public void SetLanguageToGerman()
-        {
-            menuStripLanguageEnglish.Enabled = true;
-            menuStripLanguageFrench.Enabled = true;
-            menuStripLanguageGerman.Enabled = true;
-            ActiveForm.Text = "Astro Math - Client";
-            labelStarVelocity.Text = "STERNGESCHWINDIGKEIT";
-            labelStarDistance.Text = "STERNENABSTAND";
-            labelTemperature.Text = "TEMPERATUR";
-            labelEventHorizon.Text = "    EREIGNISHORIZONT    ";
-            labelObservedWavelength.Text = "Beobachtete Wellenlänge (nm)";
-            labelRestWavelength.Text = "    Ruhewellenlänge (nm)    ";
-            labelParallaxAngle.Text = "Parallaxenwinkel (arcsec)";
-            labelCelsius.Text = "Celsius (degrees)";
-            labelSchwarzschild.Text = "Schwarzschild-Radius (m)";
-            buttonCalculateStarVelocity.Text = "BERECHNUNG";
-            buttonCalculateStarDistance.Text = "BERECHNUNG";
-            buttonConvertTemperature.Text = "KONVERTIEREN";
-            buttonCalculateEventHorizon.Text = "BERECHNUNG";
-            menuStripFile.Text = "Akte";
-            menuStripFileClearTextboxes.Text = "Textfelder löschen";
-            menuStripFileResetToDefault.Text = "Zurücksetzen";
-            menuStripFileExit.Text = "Ausgang";
-            menuStripCustomisation.Text = "Anpassung";
-            menuStripCustomisationDay.Text = "Tagesmodus";
-            menuStripCustomisationNight.Text = "Nacht-Modus";
-            menuStripCustomisationCustom.Text = "Benutzerdefiniertes Design";
-            menuStripLanguage.Text = "Sprache";
-            menuStripLanguageEnglish.Text = "Englisch";
-            menuStripLanguageFrench.Text = "Französisch";
-            menuStripLanguageGerman.Text = "Deutsch";
-            listViewOutput.Columns[0].Text = "Geschwindigkeit (m/s)";
-            listViewOutput.Columns[1].Text = "Distanz (parsecs)";
-            listViewOutput.Columns[2].Text = "Kelvin";
-            listViewOutput.Columns[3].Text = "Ereignishorizont (m)";
+            switch (language)
+            {
+                case "English":
+                    Thread.CurrentThread.CurrentUICulture = new System.Globalization.CultureInfo("en-AU");
+                    break;
+                case "French":
+                    Thread.CurrentThread.CurrentUICulture = new System.Globalization.CultureInfo("fr-FR");
+                    break;
+                case "German":
+                    Thread.CurrentThread.CurrentUICulture = new System.Globalization.CultureInfo("de-DE");
+                    break;
+                default:
+                    break;
+            }
+            Controls.Clear();
+            InitializeComponent();
         }
         private void menuStripLanguageEnglish_Click(object sender, EventArgs e)
         {
-            SetLanguageToEnglish();
+            systemLanguage = "English";
+            SetLanguage("English");
+            ChangeTheme(systemTheme);
             menuStripLanguageEnglish.Enabled = false;
         }
         private void menuStripLanguageFrench_Click(object sender, EventArgs e)
         {
-            SetLanguageToFrench();
+            systemLanguage = "French";
+            SetLanguage("French");
+            ChangeTheme(systemTheme);
             menuStripLanguageFrench.Enabled = false;
         }
 
         private void menuStripLanguageGerman_Click(object sender, EventArgs e)
         {
-            SetLanguageToGerman();
+            systemLanguage = "German";
+            SetLanguage("German");
+            ChangeTheme(systemTheme);
             menuStripLanguageGerman.Enabled = false;
         }
         #endregion LANGUAGE MENU

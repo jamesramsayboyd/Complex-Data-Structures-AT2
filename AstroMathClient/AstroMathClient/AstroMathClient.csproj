@@ -56,6 +56,15 @@
     <Compile Include="IAstroContract.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="AstroMathClient.de-DE.resx">
+      <DependentUpon>AstroMathClient.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AstroMathClient.en-AU.resx">
+      <DependentUpon>AstroMathClient.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AstroMathClient.fr-FR.resx">
+      <DependentUpon>AstroMathClient.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="AstroMathClient.resx">
       <DependentUpon>AstroMathClient.cs</DependentUpon>
     </EmbeddedResource>
