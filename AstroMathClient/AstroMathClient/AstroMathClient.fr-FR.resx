@@ -182,14 +182,8 @@
   <data name="menuStripThemesDay.Enabled" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <data name="menuStripThemesDay.Size" type="System.Drawing.Size, System.Drawing">
-    <value>131, 22</value>
-  </data>
   <data name="menuStripThemesDay.Text" xml:space="preserve">
     <value>Mode Jour</value>
-  </data>
-  <data name="menuStripThemesNight.Size" type="System.Drawing.Size, System.Drawing">
-    <value>131, 22</value>
   </data>
   <data name="menuStripThemesNight.Text" xml:space="preserve">
     <value>Mode Nuit</value>

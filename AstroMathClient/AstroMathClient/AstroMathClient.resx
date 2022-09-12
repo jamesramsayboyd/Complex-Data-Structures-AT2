@@ -131,11 +131,8 @@
   <data name="labelStarDistance.TabIndex" type="System.Int32, mscorlib">
     <value>5</value>
   </data>
-  <data name="&gt;&gt;menuStripCustomisationFore.Name" xml:space="preserve">
-    <value>menuStripCustomisationFore</value>
-  </data>
-  <data name="&gt;&gt;menuStripFile.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="toolStripStatus.Text" xml:space="preserve">
+    <value>-</value>
   </data>
   <data name="&gt;&gt;labelStarDistance.ZOrder" xml:space="preserve">
     <value>18</value>
@@ -146,8 +143,8 @@
   <data name="&gt;&gt;columnDistance.Type" xml:space="preserve">
     <value>System.Windows.Forms.ColumnHeader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;buttonCalculateStarVelocity.Parent" xml:space="preserve">
-    <value>$this</value>
+  <data name="&gt;&gt;buttonCalculateEventHorizon.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="labelEventHorizon.Location" type="System.Drawing.Point, System.Drawing">
     <value>576, 36</value>
@@ -163,6 +160,9 @@
   </data>
   <data name="textBoxObservedWavelength.Location" type="System.Drawing.Point, System.Drawing">
     <value>55, 75</value>
+  </data>
+  <data name="labelParallaxAngle.Location" type="System.Drawing.Point, System.Drawing">
+    <value>241, 57</value>
   </data>
   <data name="&gt;&gt;menuStripCustomisation.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -269,14 +269,14 @@
   <data name="labelSchwarzschild.Location" type="System.Drawing.Point, System.Drawing">
     <value>610, 57</value>
   </data>
-  <data name="buttonConvertTemperature.Text" xml:space="preserve">
-    <value>CONVERT</value>
+  <data name="labelEventHorizon.Text" xml:space="preserve">
+    <value>        EVENT HORIZON        </value>
   </data>
   <data name="&gt;&gt;labelCelsius.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-  <data name="menuStripThemesNight.Size" type="System.Drawing.Size, System.Drawing">
-    <value>180, 22</value>
+  <data name="&gt;&gt;labelObservedWavelength.ZOrder" xml:space="preserve">
+    <value>7</value>
   </data>
   <data name="textBoxSchwarzschild.TabIndex" type="System.Int32, mscorlib">
     <value>14</value>
@@ -434,6 +434,9 @@
   <data name="mainMenuStrip.ToolTip" xml:space="preserve">
     <value />
   </data>
+  <data name="&gt;&gt;textBoxParallaxAngle.Name" xml:space="preserve">
+    <value>textBoxParallaxAngle</value>
+  </data>
   <data name="labelStarVelocity.Text" xml:space="preserve">
     <value>       STAR VELOCITY       </value>
   </data>
@@ -448,6 +451,9 @@
   </data>
   <data name="textBoxParallaxAngle.Size" type="System.Drawing.Size, System.Drawing">
     <value>100, 20</value>
+  </data>
+  <data name="&gt;&gt;listViewOutput.Name" xml:space="preserve">
+    <value>listViewOutput</value>
   </data>
   <data name="labelEventHorizon.ToolTip" xml:space="preserve">
     <value />
@@ -472,6 +478,9 @@
   </data>
   <data name="&gt;&gt;textBoxExponent.Type" xml:space="preserve">
     <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
+    <value>6, 13</value>
   </data>
   <data name="&gt;&gt;columnDistance.Name" xml:space="preserve">
     <value>columnDistance</value>
@@ -500,8 +509,8 @@
   <data name="mainMenuStrip.Text" xml:space="preserve">
     <value>menuStrip1</value>
   </data>
-  <data name="&gt;&gt;textBoxParallaxAngle.Name" xml:space="preserve">
-    <value>textBoxParallaxAngle</value>
+  <data name="buttonConvertTemperature.Text" xml:space="preserve">
+    <value>CONVERT</value>
   </data>
   <data name="&gt;&gt;textBoxRestWavelength.ZOrder" xml:space="preserve">
     <value>21</value>
@@ -524,9 +533,6 @@
   <data name="menuStripThemesDay.Text" xml:space="preserve">
     <value>Day Mode</value>
   </data>
-  <data name="statusStrip.Text" xml:space="preserve">
-    <value>statusStrip1</value>
-  </data>
   <data name="labelTemperature.Location" type="System.Drawing.Point, System.Drawing">
     <value>438, 36</value>
   </data>
@@ -542,8 +548,8 @@
   <data name="labelStarVelocity.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 9.75pt, style=Bold</value>
   </data>
-  <data name="labelParallaxAngle.Location" type="System.Drawing.Point, System.Drawing">
-    <value>241, 57</value>
+  <data name="&gt;&gt;buttonCalculateStarVelocity.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;menuStripThemes.Name" xml:space="preserve">
     <value>menuStripThemes</value>
@@ -575,8 +581,8 @@
   <data name="labelCelsius.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <data name="&gt;&gt;listViewOutput.Name" xml:space="preserve">
-    <value>listViewOutput</value>
+  <data name="buttonConvertTemperature.ToolTip" xml:space="preserve">
+    <value />
   </data>
   <data name="&gt;&gt;menuStripCustomisationCustom.Name" xml:space="preserve">
     <value>menuStripCustomisationCustom</value>
@@ -614,6 +620,9 @@
   <data name="textBoxCelsius.Location" type="System.Drawing.Point, System.Drawing">
     <value>449, 75</value>
   </data>
+  <data name="&gt;&gt;menuStripCustomisationFore.Name" xml:space="preserve">
+    <value>menuStripCustomisationFore</value>
+  </data>
   <data name="&gt;&gt;menuStripThemesNight.Name" xml:space="preserve">
     <value>menuStripThemesNight</value>
   </data>
@@ -640,6 +649,9 @@
   </data>
   <data name="mainMenuStrip.Size" type="System.Drawing.Size, System.Drawing">
     <value>795, 24</value>
+  </data>
+  <data name="menuStripThemesNight.Size" type="System.Drawing.Size, System.Drawing">
+    <value>180, 22</value>
   </data>
   <data name="labelTemperature.TabIndex" type="System.Int32, mscorlib">
     <value>9</value>
@@ -689,9 +701,6 @@
   <data name="textBoxObservedWavelength.ToolTip" xml:space="preserve">
     <value />
   </data>
-  <data name="toolStripStatus.Text" xml:space="preserve">
-    <value>-</value>
-  </data>
   <data name="&gt;&gt;menuStripCustomisationBack.Name" xml:space="preserve">
     <value>menuStripCustomisationBack</value>
   </data>
@@ -739,6 +748,9 @@
   </data>
   <data name="&gt;&gt;label1.ZOrder" xml:space="preserve">
     <value>1</value>
+  </data>
+  <data name="buttonCalculateStarVelocity.Text" xml:space="preserve">
+    <value>CALCULATE</value>
   </data>
   <data name="menuStripFileClearTextboxes.Text" xml:space="preserve">
     <value>Clear Textboxes</value>
@@ -794,9 +806,6 @@
   <data name="labelStarVelocity.ToolTip" xml:space="preserve">
     <value />
   </data>
-  <data name="&gt;&gt;buttonCalculateEventHorizon.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
   <data name="menuStripThemes.Size" type="System.Drawing.Size, System.Drawing">
     <value>60, 20</value>
   </data>
@@ -844,9 +853,6 @@
   </data>
   <data name="&gt;&gt;menuStripFileResetToDefault.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;labelObservedWavelength.ZOrder" xml:space="preserve">
-    <value>7</value>
   </data>
   <data name="labelStarVelocity.Location" type="System.Drawing.Point, System.Drawing">
     <value>12, 36</value>
@@ -959,9 +965,6 @@
   <data name="&gt;&gt;buttonCalculateStarDistance.ZOrder" xml:space="preserve">
     <value>16</value>
   </data>
-  <data name="buttonConvertTemperature.ToolTip" xml:space="preserve">
-    <value />
-  </data>
   <data name="buttonCalculateStarVelocity.Size" type="System.Drawing.Size, System.Drawing">
     <value>91, 23</value>
   </data>
@@ -971,8 +974,11 @@
   <data name="menuStripCustomisationCustom.Size" type="System.Drawing.Size, System.Drawing">
     <value>196, 22</value>
   </data>
-  <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
-    <value>6, 13</value>
+  <data name="&gt;&gt;buttonCalculateStarVelocity.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="labelObservedWavelength.Text" xml:space="preserve">
+    <value>Observed Wavelength (nm)</value>
   </data>
   <data name="&gt;&gt;textBoxExponent.Parent" xml:space="preserve">
     <value>$this</value>
@@ -995,9 +1001,6 @@
   <data name="&gt;&gt;labelSchwarzschild.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="labelEventHorizon.Text" xml:space="preserve">
-    <value>        EVENT HORIZON        </value>
-  </data>
   <data name="&gt;&gt;menuStripThemes.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
@@ -1009,9 +1012,6 @@
   </data>
   <data name="&gt;&gt;columnVelocity.Name" xml:space="preserve">
     <value>columnVelocity</value>
-  </data>
-  <data name="&gt;&gt;buttonCalculateStarVelocity.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;labelRestWavelength.Parent" xml:space="preserve">
     <value>$this</value>
@@ -1061,14 +1061,14 @@
   <data name="menuStripLanguageGerman.Size" type="System.Drawing.Size, System.Drawing">
     <value>116, 22</value>
   </data>
-  <data name="buttonCalculateStarVelocity.Text" xml:space="preserve">
-    <value>CALCULATE</value>
+  <data name="&gt;&gt;menuStripFile.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;label1.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="labelObservedWavelength.Text" xml:space="preserve">
-    <value>Observed Wavelength (nm)</value>
+  <data name="statusStrip.Text" xml:space="preserve">
+    <value>statusStrip1</value>
   </data>
   <data name="menuStripCustomisationCustom.Text" xml:space="preserve">
     <value>Custom Theme</value>
@@ -1077,7 +1077,7 @@
     <value>116, 22</value>
   </data>
   <metadata name="$this.Language" type="System.Globalization.CultureInfo, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>fr-FR</value>
+    <value>en</value>
   </metadata>
   <metadata name="statusStrip.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>

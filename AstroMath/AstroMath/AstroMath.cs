@@ -50,16 +50,12 @@ namespace AstroMath
         /// Temperature in Celsius (C) in degrees
         /// Temperature in Kelvin (K)
         /// Formula: K = C + 273
-        /// (Temperatures below -273 are considered invalid and will be set to -273)
+        /// (Temperatures below -273 are considered invalid for the Kelvin scale and should be filtered out)
         /// </summary>
         /// <param name="C">The temperature to be converted (in degrees Celsius)</param>
         /// <returns>The equivalent temperature in Kelvin</returns>
         public double TemperatureInKelvin(double C)
         {
-            if (C < -273)
-            {
-                C = 273;
-            }
             double K = C + 273;
             return K;
         }
