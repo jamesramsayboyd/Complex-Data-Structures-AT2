@@ -148,6 +148,10 @@
   <data name="labelEventHorizon.Text" xml:space="preserve">
     <value>HORIZON DES ÉVÉNEMENTS</value>
   </data>
+  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="buttonCalculateEventHorizon.TabIndex" type="System.Int32, mscorlib">
+    <value>16</value>
+  </data>
   <data name="buttonCalculateEventHorizon.Text" xml:space="preserve">
     <value>CALCULER</value>
   </data>
@@ -175,23 +179,44 @@
   <data name="menuStripFile.Text" xml:space="preserve">
     <value>Fichier</value>
   </data>
-  <data name="menuStripCustomisationDay.Size" type="System.Drawing.Size, System.Drawing">
-    <value>179, 22</value>
+  <data name="menuStripThemesDay.Enabled" type="System.Boolean, mscorlib">
+    <value>True</value>
   </data>
-  <data name="menuStripCustomisationDay.Text" xml:space="preserve">
+  <data name="menuStripThemesDay.Size" type="System.Drawing.Size, System.Drawing">
+    <value>131, 22</value>
+  </data>
+  <data name="menuStripThemesDay.Text" xml:space="preserve">
     <value>Mode Jour</value>
   </data>
-  <data name="menuStripCustomisationNight.Size" type="System.Drawing.Size, System.Drawing">
-    <value>179, 22</value>
+  <data name="menuStripThemesNight.Size" type="System.Drawing.Size, System.Drawing">
+    <value>131, 22</value>
   </data>
-  <data name="menuStripCustomisationNight.Text" xml:space="preserve">
+  <data name="menuStripThemesNight.Text" xml:space="preserve">
     <value>Mode Nuit</value>
   </data>
+  <data name="menuStripThemes.Text" xml:space="preserve">
+    <value>Thèmes</value>
+  </data>
+  <data name="menuStripCustomisationCustom.Enabled" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
   <data name="menuStripCustomisationCustom.Size" type="System.Drawing.Size, System.Drawing">
-    <value>179, 22</value>
+    <value>210, 22</value>
   </data>
   <data name="menuStripCustomisationCustom.Text" xml:space="preserve">
     <value>Thème personnalisé</value>
+  </data>
+  <data name="menuStripCustomisationBack.Size" type="System.Drawing.Size, System.Drawing">
+    <value>210, 22</value>
+  </data>
+  <data name="menuStripCustomisationBack.Text" xml:space="preserve">
+    <value>Définir la couleur d’arrière</value>
+  </data>
+  <data name="menuStripCustomisationFore.Size" type="System.Drawing.Size, System.Drawing">
+    <value>210, 22</value>
+  </data>
+  <data name="menuStripCustomisationFore.Text" xml:space="preserve">
+    <value>Définir la couleur du texte</value>
   </data>
   <data name="menuStripCustomisation.Size" type="System.Drawing.Size, System.Drawing">
     <value>106, 20</value>
@@ -199,15 +224,20 @@
   <data name="menuStripCustomisation.Text" xml:space="preserve">
     <value>Personnalisation</value>
   </data>
-  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="menuStripLanguageEnglish.Enabled" type="System.Boolean, mscorlib">
-    <value>True</value>
+  <data name="menuStripLanguageEnglish.Size" type="System.Drawing.Size, System.Drawing">
+    <value>125, 22</value>
   </data>
   <data name="menuStripLanguageEnglish.Text" xml:space="preserve">
     <value>Anglais</value>
   </data>
+  <data name="menuStripLanguageFrench.Size" type="System.Drawing.Size, System.Drawing">
+    <value>125, 22</value>
+  </data>
   <data name="menuStripLanguageFrench.Text" xml:space="preserve">
     <value>Français</value>
+  </data>
+  <data name="menuStripLanguageGerman.Size" type="System.Drawing.Size, System.Drawing">
+    <value>125, 22</value>
   </data>
   <data name="menuStripLanguageGerman.Text" xml:space="preserve">
     <value>Allemand</value>
@@ -241,6 +271,9 @@
   </data>
   <data name="labelSchwarzschild.Text" xml:space="preserve">
     <value>Rayon de Schwarzschild (m)</value>
+  </data>
+  <data name="textBoxExponent.TabIndex" type="System.Int32, mscorlib">
+    <value>15</value>
   </data>
   <data name="columnVelocity.Text" xml:space="preserve">
     <value>Vélocité (m/s)</value>

@@ -26,6 +26,6 @@ C:\Users\30041547\Documents\GitHub\Complex-Data-Structures-AT2\AstroMathClient\A
 C:\Users\30041547\Documents\GitHub\Complex-Data-Structures-AT2\AstroMathClient\AstroMathClient\obj\Debug\AstroMathClient.AstroMathClient.fr-FR.resources
 C:\Users\30041547\Documents\GitHub\Complex-Data-Structures-AT2\AstroMathClient\AstroMathClient\obj\Debug\de-DE\AstroMathClient.resources.dll
 C:\Users\30041547\Documents\GitHub\Complex-Data-Structures-AT2\AstroMathClient\AstroMathClient\obj\Debug\fr-FR\AstroMathClient.resources.dll
-C:\Users\30041547\Documents\GitHub\Complex-Data-Structures-AT2\AstroMathClient\AstroMathClient\bin\Debug\en-AU\AstroMathClient.resources.dll
-C:\Users\30041547\Documents\GitHub\Complex-Data-Structures-AT2\AstroMathClient\AstroMathClient\obj\Debug\AstroMathClient.AstroMathClient.en-AU.resources
-C:\Users\30041547\Documents\GitHub\Complex-Data-Structures-AT2\AstroMathClient\AstroMathClient\obj\Debug\en-AU\AstroMathClient.resources.dll
+C:\Users\30041547\Documents\GitHub\Complex-Data-Structures-AT2\AstroMathClient\AstroMathClient\bin\Debug\en\AstroMathClient.resources.dll
+C:\Users\30041547\Documents\GitHub\Complex-Data-Structures-AT2\AstroMathClient\AstroMathClient\obj\Debug\AstroMathClient.AstroMathClient.en.resources
+C:\Users\30041547\Documents\GitHub\Complex-Data-Structures-AT2\AstroMathClient\AstroMathClient\obj\Debug\en\AstroMathClient.resources.dll

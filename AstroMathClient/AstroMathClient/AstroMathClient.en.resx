@@ -118,39 +118,21 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="buttonCalculateStarDistance.TabIndex" type="System.Int32, mscorlib">
-    <value>7</value>
-  </data>
   <data name="buttonCalculateEventHorizon.TabIndex" type="System.Int32, mscorlib">
     <value>16</value>
   </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="menuStripFileClearTextboxes.Size" type="System.Drawing.Size, System.Drawing">
-    <value>157, 22</value>
+  <data name="menuStripThemesDay.Size" type="System.Drawing.Size, System.Drawing">
+    <value>138, 22</value>
   </data>
-  <data name="menuStripFileResetToDefault.Size" type="System.Drawing.Size, System.Drawing">
-    <value>157, 22</value>
+  <data name="menuStripThemesNight.Size" type="System.Drawing.Size, System.Drawing">
+    <value>138, 22</value>
   </data>
-  <data name="menuStripFileExit.Size" type="System.Drawing.Size, System.Drawing">
-    <value>157, 22</value>
+  <data name="menuStripThemes.Text" xml:space="preserve">
+    <value>Themes</value>
   </data>
-  <data name="menuStripCustomisationDay.Size" type="System.Drawing.Size, System.Drawing">
-    <value>155, 22</value>
-  </data>
-  <data name="menuStripCustomisationNight.Size" type="System.Drawing.Size, System.Drawing">
-    <value>155, 22</value>
-  </data>
-  <data name="menuStripCustomisationCustom.Size" type="System.Drawing.Size, System.Drawing">
-    <value>155, 22</value>
-  </data>
-  <data name="menuStripLanguageEnglish.Size" type="System.Drawing.Size, System.Drawing">
-    <value>116, 22</value>
-  </data>
-  <data name="menuStripLanguageFrench.Size" type="System.Drawing.Size, System.Drawing">
-    <value>116, 22</value>
-  </data>
-  <data name="menuStripLanguageGerman.Size" type="System.Drawing.Size, System.Drawing">
-    <value>116, 22</value>
+  <data name="menuStripCustomisationCustom.Enabled" type="System.Boolean, mscorlib">
+    <value>True</value>
   </data>
   <data name="textBoxExponent.TabIndex" type="System.Int32, mscorlib">
     <value>15</value>

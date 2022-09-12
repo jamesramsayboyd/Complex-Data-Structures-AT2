@@ -59,7 +59,7 @@
     <EmbeddedResource Include="AstroMathClient.de-DE.resx">
       <DependentUpon>AstroMathClient.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="AstroMathClient.en-AU.resx">
+    <EmbeddedResource Include="AstroMathClient.en.resx">
       <DependentUpon>AstroMathClient.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="AstroMathClient.fr-FR.resx">

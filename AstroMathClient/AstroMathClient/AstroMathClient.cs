@@ -36,7 +36,7 @@ namespace AstroMathClient
                 double observedWavelength = double.Parse(textBoxObservedWavelength.Text);
                 double restWavelength = double.Parse(textBoxRestWavelength.Text);
                 double starVelocity = astroPipeProxy.StarVelocity(observedWavelength, restWavelength);
-                DisplayCalculationResult(starVelocity.ToString(), "", "", "");
+                DisplayCalculationResult(starVelocity.ToString("f4"), "", "", "");
                 UserMessage(0);
             }
             else
@@ -51,7 +51,7 @@ namespace AstroMathClient
             {
                 double parallaxAngle = double.Parse(textBoxParallaxAngle.Text);
                 double starDistance = astroPipeProxy.StarDistance(parallaxAngle);
-                DisplayCalculationResult("", starDistance.ToString(), "", "");
+                DisplayCalculationResult("", starDistance.ToString("f4"), "", "");
                 UserMessage(0);
             }
             else
@@ -91,7 +91,7 @@ namespace AstroMathClient
                 double exponentNo = double.Parse(textBoxExponent.Text);
                 double schwarzschildRadius = baseNo * Math.Pow(10, exponentNo);
                 double eventHorizon = astroPipeProxy.EventHorizon(schwarzschildRadius);
-                DisplayCalculationResult("", "", "", eventHorizon.ToString());
+                DisplayCalculationResult("", "", "", eventHorizon.ToString("G4"));
                 UserMessage(0);
             }
             else
@@ -244,8 +244,8 @@ namespace AstroMathClient
         #region CUSTOMISATION MENU
         private void ChangeBackColours(Color colour)
         {
-            menuStripCustomisationDay.Enabled = true;
-            menuStripCustomisationNight.Enabled = true;
+            menuStripThemesDay.Enabled = true;
+            menuStripThemesNight.Enabled = true;
             menuStripCustomisationCustom.Enabled = true;
             ActiveForm.BackColor = colour;
             buttonCalculateStarVelocity.BackColor = colour;
@@ -254,6 +254,8 @@ namespace AstroMathClient
             buttonCalculateEventHorizon.BackColor = colour;
             mainMenuStrip.BackColor = colour;
             menuStripFile.DropDown.BackColor = colour;
+            menuStripThemes.BackColor = colour;
+            menuStripThemes.DropDown.BackColor = colour;
             menuStripCustomisation.BackColor = colour;
             menuStripCustomisation.DropDown.BackColor = colour;
             menuStripLanguage.BackColor = colour;
@@ -271,18 +273,29 @@ namespace AstroMathClient
             buttonCalculateEventHorizon.ForeColor = colour;
             mainMenuStrip.ForeColor = colour;
             menuStripFile.DropDown.ForeColor = colour;
+            menuStripThemes.DropDown.ForeColor = colour;
             menuStripCustomisation.DropDown.ForeColor = colour;
             menuStripLanguage.DropDown.ForeColor = colour;
             statusStrip.ForeColor = colour;
             listViewOutput.ForeColor = colour;
         }
 
-        private void CustomTheme()
+        private void menuStripCustomisationBack_Click(object sender, EventArgs e)
         {
             ColorDialog colorDialog = new ColorDialog();
             colorDialog.ShowDialog(Owner);
             customBackColour = colorDialog.Color;
-            //customForeColour = colorDialog.Color;
+            ChangeBackColours(customBackColour);
+            ChangeTheme("Custom");
+        }
+
+        private void menuStripCustomisationFore_Click(object sender, EventArgs e)
+        {
+            ColorDialog colorDialog = new ColorDialog();
+            colorDialog.ShowDialog(Owner);
+            customForeColour = colorDialog.Color;
+            ChangeForeColours(customForeColour);
+            ChangeTheme("Custom");
         }
 
         private void ChangeTheme(string theme)
@@ -309,16 +322,16 @@ namespace AstroMathClient
             }
         }
 
-        private void menuStripCustomisationDay_Click(object sender, EventArgs e)
+        private void dayModeToolStripMenuItem_Click(object sender, EventArgs e)
         {
             ChangeTheme("Day");
-            menuStripCustomisationDay.Enabled = false;
+            menuStripThemesDay.Enabled = false;
         }
 
-        private void menuStripCustomisationNight_Click(object sender, EventArgs e)
+        private void nightModeToolStripMenuItem_Click(object sender, EventArgs e)
         {
             ChangeTheme("Night");
-            menuStripCustomisationNight.Enabled = false;
+            menuStripThemesNight.Enabled = false;
         }
 
         private void menuStripCustomisationCustom_Click(object sender, EventArgs e)
@@ -376,5 +389,6 @@ namespace AstroMathClient
             menuStripLanguageGerman.Enabled = false;
         }
         #endregion LANGUAGE MENU
+
     }
 }

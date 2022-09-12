@@ -51,10 +51,13 @@
             this.menuStripFileClearTextboxes = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStripFileResetToDefault = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStripFileExit = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuStripThemes = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuStripThemesDay = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuStripThemesNight = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStripCustomisation = new System.Windows.Forms.ToolStripMenuItem();
-            this.menuStripCustomisationDay = new System.Windows.Forms.ToolStripMenuItem();
-            this.menuStripCustomisationNight = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStripCustomisationCustom = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuStripCustomisationBack = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuStripCustomisationFore = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStripLanguage = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStripLanguageEnglish = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStripLanguageFrench = new System.Windows.Forms.ToolStripMenuItem();
@@ -79,17 +82,20 @@
             // 
             resources.ApplyResources(this.textBoxObservedWavelength, "textBoxObservedWavelength");
             this.textBoxObservedWavelength.Name = "textBoxObservedWavelength";
+            this.toolTip.SetToolTip(this.textBoxObservedWavelength, resources.GetString("textBoxObservedWavelength.ToolTip"));
             // 
             // textBoxRestWavelength
             // 
             resources.ApplyResources(this.textBoxRestWavelength, "textBoxRestWavelength");
             this.textBoxRestWavelength.Name = "textBoxRestWavelength";
+            this.toolTip.SetToolTip(this.textBoxRestWavelength, resources.GetString("textBoxRestWavelength.ToolTip"));
             // 
             // buttonCalculateStarVelocity
             // 
-            this.buttonCalculateStarVelocity.BackColor = System.Drawing.Color.White;
             resources.ApplyResources(this.buttonCalculateStarVelocity, "buttonCalculateStarVelocity");
+            this.buttonCalculateStarVelocity.BackColor = System.Drawing.Color.White;
             this.buttonCalculateStarVelocity.Name = "buttonCalculateStarVelocity";
+            this.toolTip.SetToolTip(this.buttonCalculateStarVelocity, resources.GetString("buttonCalculateStarVelocity.ToolTip"));
             this.buttonCalculateStarVelocity.UseVisualStyleBackColor = false;
             this.buttonCalculateStarVelocity.Click += new System.EventHandler(this.buttonCalculateStarVelocity_Click);
             // 
@@ -97,22 +103,26 @@
             // 
             resources.ApplyResources(this.labelStarVelocity, "labelStarVelocity");
             this.labelStarVelocity.Name = "labelStarVelocity";
+            this.toolTip.SetToolTip(this.labelStarVelocity, resources.GetString("labelStarVelocity.ToolTip"));
             // 
             // labelStarDistance
             // 
             resources.ApplyResources(this.labelStarDistance, "labelStarDistance");
             this.labelStarDistance.Name = "labelStarDistance";
+            this.toolTip.SetToolTip(this.labelStarDistance, resources.GetString("labelStarDistance.ToolTip"));
             // 
             // textBoxParallaxAngle
             // 
             resources.ApplyResources(this.textBoxParallaxAngle, "textBoxParallaxAngle");
             this.textBoxParallaxAngle.Name = "textBoxParallaxAngle";
+            this.toolTip.SetToolTip(this.textBoxParallaxAngle, resources.GetString("textBoxParallaxAngle.ToolTip"));
             // 
             // buttonCalculateStarDistance
             // 
-            this.buttonCalculateStarDistance.BackColor = System.Drawing.Color.White;
             resources.ApplyResources(this.buttonCalculateStarDistance, "buttonCalculateStarDistance");
+            this.buttonCalculateStarDistance.BackColor = System.Drawing.Color.White;
             this.buttonCalculateStarDistance.Name = "buttonCalculateStarDistance";
+            this.toolTip.SetToolTip(this.buttonCalculateStarDistance, resources.GetString("buttonCalculateStarDistance.ToolTip"));
             this.buttonCalculateStarDistance.UseVisualStyleBackColor = false;
             this.buttonCalculateStarDistance.Click += new System.EventHandler(this.buttonCalculateStarDistance_Click);
             // 
@@ -120,17 +130,20 @@
             // 
             resources.ApplyResources(this.labelTemperature, "labelTemperature");
             this.labelTemperature.Name = "labelTemperature";
+            this.toolTip.SetToolTip(this.labelTemperature, resources.GetString("labelTemperature.ToolTip"));
             // 
             // textBoxCelsius
             // 
             resources.ApplyResources(this.textBoxCelsius, "textBoxCelsius");
             this.textBoxCelsius.Name = "textBoxCelsius";
+            this.toolTip.SetToolTip(this.textBoxCelsius, resources.GetString("textBoxCelsius.ToolTip"));
             // 
             // buttonConvertTemperature
             // 
-            this.buttonConvertTemperature.BackColor = System.Drawing.Color.White;
             resources.ApplyResources(this.buttonConvertTemperature, "buttonConvertTemperature");
+            this.buttonConvertTemperature.BackColor = System.Drawing.Color.White;
             this.buttonConvertTemperature.Name = "buttonConvertTemperature";
+            this.toolTip.SetToolTip(this.buttonConvertTemperature, resources.GetString("buttonConvertTemperature.ToolTip"));
             this.buttonConvertTemperature.UseVisualStyleBackColor = false;
             this.buttonConvertTemperature.Click += new System.EventHandler(this.buttonConvertTemperature_Click);
             // 
@@ -138,169 +151,203 @@
             // 
             resources.ApplyResources(this.labelEventHorizon, "labelEventHorizon");
             this.labelEventHorizon.Name = "labelEventHorizon";
+            this.toolTip.SetToolTip(this.labelEventHorizon, resources.GetString("labelEventHorizon.ToolTip"));
             // 
             // textBoxSchwarzschild
             // 
             resources.ApplyResources(this.textBoxSchwarzschild, "textBoxSchwarzschild");
             this.textBoxSchwarzschild.Name = "textBoxSchwarzschild";
+            this.toolTip.SetToolTip(this.textBoxSchwarzschild, resources.GetString("textBoxSchwarzschild.ToolTip"));
             // 
             // buttonCalculateEventHorizon
             // 
-            this.buttonCalculateEventHorizon.BackColor = System.Drawing.Color.White;
             resources.ApplyResources(this.buttonCalculateEventHorizon, "buttonCalculateEventHorizon");
+            this.buttonCalculateEventHorizon.BackColor = System.Drawing.Color.White;
             this.buttonCalculateEventHorizon.Name = "buttonCalculateEventHorizon";
+            this.toolTip.SetToolTip(this.buttonCalculateEventHorizon, resources.GetString("buttonCalculateEventHorizon.ToolTip"));
             this.buttonCalculateEventHorizon.UseVisualStyleBackColor = false;
             this.buttonCalculateEventHorizon.Click += new System.EventHandler(this.buttonCalculateEventHorizon_Click);
             // 
             // statusStrip
             // 
+            resources.ApplyResources(this.statusStrip, "statusStrip");
             this.statusStrip.BackColor = System.Drawing.Color.White;
             this.statusStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripStatus});
-            resources.ApplyResources(this.statusStrip, "statusStrip");
             this.statusStrip.Name = "statusStrip";
+            this.toolTip.SetToolTip(this.statusStrip, resources.GetString("statusStrip.ToolTip"));
             // 
             // toolStripStatus
             // 
-            this.toolStripStatus.Name = "toolStripStatus";
             resources.ApplyResources(this.toolStripStatus, "toolStripStatus");
+            this.toolStripStatus.Name = "toolStripStatus";
             // 
             // mainMenuStrip
             // 
+            resources.ApplyResources(this.mainMenuStrip, "mainMenuStrip");
             this.mainMenuStrip.BackColor = System.Drawing.Color.White;
             this.mainMenuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.menuStripFile,
+            this.menuStripThemes,
             this.menuStripCustomisation,
             this.menuStripLanguage});
-            resources.ApplyResources(this.mainMenuStrip, "mainMenuStrip");
             this.mainMenuStrip.Name = "mainMenuStrip";
+            this.toolTip.SetToolTip(this.mainMenuStrip, resources.GetString("mainMenuStrip.ToolTip"));
             // 
             // menuStripFile
             // 
+            resources.ApplyResources(this.menuStripFile, "menuStripFile");
             this.menuStripFile.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.menuStripFileClearTextboxes,
             this.menuStripFileResetToDefault,
             this.menuStripFileExit});
             this.menuStripFile.Name = "menuStripFile";
-            resources.ApplyResources(this.menuStripFile, "menuStripFile");
             // 
             // menuStripFileClearTextboxes
             // 
-            this.menuStripFileClearTextboxes.Name = "menuStripFileClearTextboxes";
             resources.ApplyResources(this.menuStripFileClearTextboxes, "menuStripFileClearTextboxes");
+            this.menuStripFileClearTextboxes.Name = "menuStripFileClearTextboxes";
             this.menuStripFileClearTextboxes.Click += new System.EventHandler(this.menuStripFileClearTextboxes_Click);
             // 
             // menuStripFileResetToDefault
             // 
-            this.menuStripFileResetToDefault.Name = "menuStripFileResetToDefault";
             resources.ApplyResources(this.menuStripFileResetToDefault, "menuStripFileResetToDefault");
+            this.menuStripFileResetToDefault.Name = "menuStripFileResetToDefault";
             this.menuStripFileResetToDefault.Click += new System.EventHandler(this.resetToDefaultToolStripMenuItem_Click);
             // 
             // menuStripFileExit
             // 
-            this.menuStripFileExit.Name = "menuStripFileExit";
             resources.ApplyResources(this.menuStripFileExit, "menuStripFileExit");
+            this.menuStripFileExit.Name = "menuStripFileExit";
             this.menuStripFileExit.Click += new System.EventHandler(this.menuStripFileExit_Click);
+            // 
+            // menuStripThemes
+            // 
+            resources.ApplyResources(this.menuStripThemes, "menuStripThemes");
+            this.menuStripThemes.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.menuStripThemesDay,
+            this.menuStripThemesNight});
+            this.menuStripThemes.Name = "menuStripThemes";
+            // 
+            // menuStripThemesDay
+            // 
+            resources.ApplyResources(this.menuStripThemesDay, "menuStripThemesDay");
+            this.menuStripThemesDay.Name = "menuStripThemesDay";
+            this.menuStripThemesDay.Click += new System.EventHandler(this.dayModeToolStripMenuItem_Click);
+            // 
+            // menuStripThemesNight
+            // 
+            resources.ApplyResources(this.menuStripThemesNight, "menuStripThemesNight");
+            this.menuStripThemesNight.Name = "menuStripThemesNight";
+            this.menuStripThemesNight.Click += new System.EventHandler(this.nightModeToolStripMenuItem_Click);
             // 
             // menuStripCustomisation
             // 
-            this.menuStripCustomisation.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.menuStripCustomisationDay,
-            this.menuStripCustomisationNight,
-            this.menuStripCustomisationCustom});
-            this.menuStripCustomisation.Name = "menuStripCustomisation";
             resources.ApplyResources(this.menuStripCustomisation, "menuStripCustomisation");
-            // 
-            // menuStripCustomisationDay
-            // 
-            resources.ApplyResources(this.menuStripCustomisationDay, "menuStripCustomisationDay");
-            this.menuStripCustomisationDay.Name = "menuStripCustomisationDay";
-            this.menuStripCustomisationDay.Click += new System.EventHandler(this.menuStripCustomisationDay_Click);
-            // 
-            // menuStripCustomisationNight
-            // 
-            this.menuStripCustomisationNight.Name = "menuStripCustomisationNight";
-            resources.ApplyResources(this.menuStripCustomisationNight, "menuStripCustomisationNight");
-            this.menuStripCustomisationNight.Click += new System.EventHandler(this.menuStripCustomisationNight_Click);
+            this.menuStripCustomisation.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.menuStripCustomisationCustom,
+            this.menuStripCustomisationBack,
+            this.menuStripCustomisationFore});
+            this.menuStripCustomisation.Name = "menuStripCustomisation";
             // 
             // menuStripCustomisationCustom
             // 
-            this.menuStripCustomisationCustom.Name = "menuStripCustomisationCustom";
             resources.ApplyResources(this.menuStripCustomisationCustom, "menuStripCustomisationCustom");
+            this.menuStripCustomisationCustom.Name = "menuStripCustomisationCustom";
             this.menuStripCustomisationCustom.Click += new System.EventHandler(this.menuStripCustomisationCustom_Click);
+            // 
+            // menuStripCustomisationBack
+            // 
+            resources.ApplyResources(this.menuStripCustomisationBack, "menuStripCustomisationBack");
+            this.menuStripCustomisationBack.Name = "menuStripCustomisationBack";
+            this.menuStripCustomisationBack.Click += new System.EventHandler(this.menuStripCustomisationBack_Click);
+            // 
+            // menuStripCustomisationFore
+            // 
+            resources.ApplyResources(this.menuStripCustomisationFore, "menuStripCustomisationFore");
+            this.menuStripCustomisationFore.Name = "menuStripCustomisationFore";
+            this.menuStripCustomisationFore.Click += new System.EventHandler(this.menuStripCustomisationFore_Click);
             // 
             // menuStripLanguage
             // 
+            resources.ApplyResources(this.menuStripLanguage, "menuStripLanguage");
             this.menuStripLanguage.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.menuStripLanguageEnglish,
             this.menuStripLanguageFrench,
             this.menuStripLanguageGerman});
             this.menuStripLanguage.Name = "menuStripLanguage";
-            resources.ApplyResources(this.menuStripLanguage, "menuStripLanguage");
             // 
             // menuStripLanguageEnglish
             // 
-            this.menuStripLanguageEnglish.Name = "menuStripLanguageEnglish";
             resources.ApplyResources(this.menuStripLanguageEnglish, "menuStripLanguageEnglish");
+            this.menuStripLanguageEnglish.Name = "menuStripLanguageEnglish";
             this.menuStripLanguageEnglish.Click += new System.EventHandler(this.menuStripLanguageEnglish_Click);
             // 
             // menuStripLanguageFrench
             // 
-            this.menuStripLanguageFrench.Name = "menuStripLanguageFrench";
             resources.ApplyResources(this.menuStripLanguageFrench, "menuStripLanguageFrench");
+            this.menuStripLanguageFrench.Name = "menuStripLanguageFrench";
             this.menuStripLanguageFrench.Click += new System.EventHandler(this.menuStripLanguageFrench_Click);
             // 
             // menuStripLanguageGerman
             // 
-            this.menuStripLanguageGerman.Name = "menuStripLanguageGerman";
             resources.ApplyResources(this.menuStripLanguageGerman, "menuStripLanguageGerman");
+            this.menuStripLanguageGerman.Name = "menuStripLanguageGerman";
             this.menuStripLanguageGerman.Click += new System.EventHandler(this.menuStripLanguageGerman_Click);
             // 
             // labelObservedWavelength
             // 
             resources.ApplyResources(this.labelObservedWavelength, "labelObservedWavelength");
             this.labelObservedWavelength.Name = "labelObservedWavelength";
+            this.toolTip.SetToolTip(this.labelObservedWavelength, resources.GetString("labelObservedWavelength.ToolTip"));
             // 
             // labelRestWavelength
             // 
             resources.ApplyResources(this.labelRestWavelength, "labelRestWavelength");
             this.labelRestWavelength.Name = "labelRestWavelength";
+            this.toolTip.SetToolTip(this.labelRestWavelength, resources.GetString("labelRestWavelength.ToolTip"));
             // 
             // labelParallaxAngle
             // 
             resources.ApplyResources(this.labelParallaxAngle, "labelParallaxAngle");
             this.labelParallaxAngle.Name = "labelParallaxAngle";
+            this.toolTip.SetToolTip(this.labelParallaxAngle, resources.GetString("labelParallaxAngle.ToolTip"));
             // 
             // labelCelsius
             // 
             resources.ApplyResources(this.labelCelsius, "labelCelsius");
             this.labelCelsius.Name = "labelCelsius";
+            this.toolTip.SetToolTip(this.labelCelsius, resources.GetString("labelCelsius.ToolTip"));
             // 
             // labelSchwarzschild
             // 
             resources.ApplyResources(this.labelSchwarzschild, "labelSchwarzschild");
             this.labelSchwarzschild.Name = "labelSchwarzschild";
+            this.toolTip.SetToolTip(this.labelSchwarzschild, resources.GetString("labelSchwarzschild.ToolTip"));
             // 
             // textBoxExponent
             // 
             resources.ApplyResources(this.textBoxExponent, "textBoxExponent");
             this.textBoxExponent.Name = "textBoxExponent";
+            this.toolTip.SetToolTip(this.textBoxExponent, resources.GetString("textBoxExponent.ToolTip"));
             // 
             // label1
             // 
             resources.ApplyResources(this.label1, "label1");
             this.label1.Name = "label1";
+            this.toolTip.SetToolTip(this.label1, resources.GetString("label1.ToolTip"));
             // 
             // listViewOutput
             // 
+            resources.ApplyResources(this.listViewOutput, "listViewOutput");
             this.listViewOutput.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.columnVelocity,
             this.columnDistance,
             this.columnTemperature,
             this.columnEventHorizon});
             this.listViewOutput.HideSelection = false;
-            resources.ApplyResources(this.listViewOutput, "listViewOutput");
             this.listViewOutput.Name = "listViewOutput";
+            this.toolTip.SetToolTip(this.listViewOutput, resources.GetString("listViewOutput.ToolTip"));
             this.listViewOutput.UseCompatibleStateImageBehavior = false;
             this.listViewOutput.View = System.Windows.Forms.View.Details;
             // 
@@ -350,6 +397,7 @@
             this.Controls.Add(this.textBoxObservedWavelength);
             this.MainMenuStrip = this.mainMenuStrip;
             this.Name = "AstroMathClient";
+            this.toolTip.SetToolTip(this, resources.GetString("$this.ToolTip"));
             this.statusStrip.ResumeLayout(false);
             this.statusStrip.PerformLayout();
             this.mainMenuStrip.ResumeLayout(false);
@@ -382,8 +430,6 @@
         private System.Windows.Forms.ToolStripMenuItem menuStripCustomisation;
         private System.Windows.Forms.ToolStripMenuItem menuStripLanguage;
         private System.Windows.Forms.ToolStripMenuItem menuStripFileExit;
-        private System.Windows.Forms.ToolStripMenuItem menuStripCustomisationDay;
-        private System.Windows.Forms.ToolStripMenuItem menuStripCustomisationNight;
         private System.Windows.Forms.ToolStripMenuItem menuStripCustomisationCustom;
         private System.Windows.Forms.ToolStripMenuItem menuStripLanguageEnglish;
         private System.Windows.Forms.ToolStripMenuItem menuStripLanguageFrench;
@@ -402,6 +448,11 @@
         private System.Windows.Forms.ColumnHeader columnDistance;
         private System.Windows.Forms.ColumnHeader columnTemperature;
         private System.Windows.Forms.ColumnHeader columnEventHorizon;
+        private System.Windows.Forms.ToolStripMenuItem menuStripCustomisationBack;
+        private System.Windows.Forms.ToolStripMenuItem menuStripThemes;
+        private System.Windows.Forms.ToolStripMenuItem menuStripThemesDay;
+        private System.Windows.Forms.ToolStripMenuItem menuStripThemesNight;
+        private System.Windows.Forms.ToolStripMenuItem menuStripCustomisationFore;
     }
 }
 
