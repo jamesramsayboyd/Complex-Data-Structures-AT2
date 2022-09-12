@@ -19,12 +19,14 @@ namespace AstroMathClient
             InitializeComponent();
             ConnectToServer();
         }
+        #region GLOBAL VARIABLES
         // Global variables for pipe proxy, language and theme
         IAstroContract astroPipeProxy;
         string systemLanguage = "English";
         string systemTheme = "Day";
         Color customBackColour = Color.White;
         Color customForeColour = Color.Black;
+        #endregion GLOBAL VARIABLES
 
         #region BUTTON METHODS
         /// <summary>
